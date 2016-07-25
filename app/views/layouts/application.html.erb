@@ -9,7 +9,11 @@
   </head>
 
   <body>
-    <%= notice %>
+
+    <% if user_signed_in? %>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <% end %>
+    
     <%= yield %>
 
     <p class="notice"><%= notice %></p>
