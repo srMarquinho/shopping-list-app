@@ -1,9 +1,11 @@
 # Shopping List Reminder
 
-*   Ruby version: `2.3.0`
-*   Configuration: Run `bundle install`
-*   Database creation: Run `bin/rails db:create`
-*   Test suite: Run `rspec`
+- Ruby version: `2.3.0`
+- Rails version: `5.0.0`
+- Server: Run `bin/rails server` and `http://localhost:3000/`
+- Configuration: Run `bundle install`
+- Database creation: Run `bin/rails db:create`
+- Test suite: Run `rspec`
 
 User stories:
 
