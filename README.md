@@ -27,7 +27,7 @@ I want to add and remove items for the list
 
 ```text
 As a user
-So I can specify where to buy a item
+So I can specify where to buy an item
 I want to add a location of an item
 ```
 
@@ -35,12 +35,6 @@ I want to add a location of an item
 As a user
 So I can be reminded to buy an item
 I want to receive a notification when near the location of an item
-```
-
-```text
-As a user
-So I know what to buy
-I can view the items on my list
 ```
 
 ```text
