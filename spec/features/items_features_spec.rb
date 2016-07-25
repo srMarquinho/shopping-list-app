@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'items' do
   context 'no items have been added' do
     scenario 'should display a prompt to add an item' do
-      visit '/items'
+      signup
       expect(page).to have_content 'No items yet'
       expect(page).to have_link 'Add an item'
     end
@@ -15,7 +15,7 @@ feature 'items' do
     end
 
     scenario 'display items' do
-      visit '/items'
+      signup
       expect(page).to have_content('Shampoo')
       expect(page).not_to have_content('No items yet')
     end
@@ -23,7 +23,7 @@ feature 'items' do
 
   context 'creating items' do
     scenario 'prompts user to fill out a form, then displays the new item' do
-      visit '/items'
+      signup
       click_link 'Add an item'
       fill_in 'Name', with: 'Shampoo'
       click_button 'Create Item'
@@ -37,7 +37,7 @@ feature 'items' do
     let!(:shampoo){ Item.create(name:'Shampoo') }
 
     scenario 'lets a user view a item' do
-     visit '/items'
+     signup
      click_link 'Shampoo'
      expect(page).to have_content 'Shampoo'
      expect(current_path).to eq "/items/#{shampoo.id}"
@@ -49,7 +49,7 @@ feature 'items' do
     before { Item.create name: 'Shampoo', description: 'Herbal essences' }
 
     scenario 'let a user edit an item' do
-     visit '/items'
+     signup
      click_link 'Edit Shampoo'
      fill_in 'Name', with: 'Shampoo'
      fill_in 'Description', with: 'Herbal essences'
@@ -61,12 +61,12 @@ feature 'items' do
   end
 
 
-  context 'deleting restaurants' do
+  context 'deleting items' do
 
     before { Item.create name: 'Shampoo', description: 'Herbal essences' }
 
     scenario 'removes an item when a user clicks a delete link' do
-      visit '/items'
+      signup
       click_link 'Delete Shampoo'
       expect(page).not_to have_content 'Shampoo'
       expect(page).to have_content 'Item deleted successfully'
