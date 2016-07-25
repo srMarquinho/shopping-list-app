@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
+  
+  before_action :authenticate_user!
+
   def index
-    raise 'Hello from the index action'
   end
 end
