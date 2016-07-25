@@ -1,24 +1,50 @@
-# README
+# Shopping List Reminder
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+*   Ruby version: `2.3.0`
+*   Configuration: Run `bundle install`
+*   Database creation: Run `bin/rails db:create`
+*   Test suite: Run `rspec`
 
-Things you may want to cover:
+User stories:
 
-* Ruby version
+```text
+As a user
+So I know what to buy
+I can view a list of items
+```
 
-* System dependencies
+```text
+As a user
+So I view my own list of item
+I want to be able to sign in
+```
 
-* Configuration
+```text
+As a user
+So I can modify my list
+I want to add and remove items for the list
+```
 
-* Database creation
+```text
+As a user
+So I can specify where to buy a item
+I want to add a location of an item
+```
 
-* Database initialization
+```text
+As a user
+So I can be reminded to buy an item
+I want to receive a notification when near the location of an item
+```
 
-* How to run the test suite
+```text
+As a user
+So I know what to buy
+I can view the items on my list
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```text
+As a user
+So I can no longer get notified
+I want to check the item as completed
+```
