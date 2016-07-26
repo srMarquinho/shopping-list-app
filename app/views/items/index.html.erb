@@ -1,9 +1,9 @@
-
-
 <% if @items.any? %>
   <% @items.each do |item| %>
-      <h3> <%= check_box_tag item.id, item.name, item.completed, class: "item-check" %>
-      <!-- <h3> <input type="button" id="<%= item.id %>" class="item-check"> -->
+      <h3> 
+
+        <input type="checkbox" class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>">
+
       <%= link_to item.name, item_path(item) %> </h3>
 
 

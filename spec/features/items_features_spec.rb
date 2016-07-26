@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'items' do
+feature 'Items' do
   context 'no items have been added' do
     scenario 'should display a prompt to add an item' do
       signup
@@ -73,17 +73,4 @@ feature 'items' do
     end
   end
 
-  context 'completing items' do
-
-    let!(:shampoo){ Item.create(name:'Shampoo', description: 'Herbal essences', completed: false) }
-
-    scenario 'user can click a checkbox to complete an item', :js => true do
-      signup
-      click_button("#{shampoo.id}")
-      sleep(5.seconds)
-      save_and_open_page
-      # wait_for_ajax
-      expect(shampoo.completed).to eq true
-    end
-  end
 end
