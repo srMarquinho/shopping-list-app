@@ -71,8 +71,16 @@ feature 'items' do
       expect(page).not_to have_content 'Shampoo'
       expect(page).to have_content 'Item deleted successfully'
     end
-
   end
 
+  context 'completing items' do
 
+    let!(:shampoo){ Item.create(name:'Shampoo', description: 'Herbal essences', completed: false) }
+
+    scenario 'user can click a checkbox to complete an item' do
+      signup
+      check('Shampoo')
+      expect(shampoo.completed).to eq true
+    end
+  end
 end

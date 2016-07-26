@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/srMarquinho/shopping-list-app.svg?branch=master)](https://travis-ci.org/srMarquinho/shopping-list-app)
-
 # Shopping List Reminder
 
 - Ruby version: `2.3.0`
