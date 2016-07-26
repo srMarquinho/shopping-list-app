@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20160725163710) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.boolean  "status"
     t.boolean  "completed"
   end
 
