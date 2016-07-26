@@ -10,10 +10,33 @@
 
   <body>
 
+  <p id="demo"></p>
+
+  <script>
+
+    var x = document.getElementById("demo");
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+    function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
+    }
+
+  setInterval(function(){
+    getLocation();
+  }, 500);
+
+  </script>
+
     <% if user_signed_in? %>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
     <% end %>
-    
+
     <%= yield %>
 
     <p class="notice"><%= notice %></p>
