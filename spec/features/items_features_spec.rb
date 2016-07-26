@@ -79,7 +79,8 @@ feature 'items' do
 
     scenario 'user can click a checkbox to complete an item' do
       signup
-      check('Shampoo')
+      check("#{shampoo.id}")
+      # wait_for_ajax
       expect(shampoo.completed).to eq true
     end
   end

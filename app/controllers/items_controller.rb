@@ -39,7 +39,9 @@ class ItemsController < ApplicationController
 
 
   def toggle
+    p "HERE I AM IN THE TOGGLE METHOD!!!!!!!!!"
     @item = Item.find(params[:id])
+    p @item
     @item.completed == false ? @item.update(completed: true) : @item.update(completed: false)
   end
 

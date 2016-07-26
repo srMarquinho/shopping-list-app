@@ -18,13 +18,14 @@
     No items yet
   <% end %>
 
+
 <p><a href= "<%= new_item_path %>">Add an item</a></p>
 
 <!-- <script src="/item.js"></script> -->
 
 
 <script>
-$(".item-check").click(function(){
+$(".item-check").bind("change", function(){
   $.ajax({
     url: "/items/"+this.id+"/toggle",
     type: "POST"

@@ -6,3 +6,13 @@ def signup
   fill_in('Password confirmation', with: 'testtest')
   click_button('Sign up')
 end
+
+def signout
+  click_link('Sign out')
+end
+
+def signin
+  fill_in('Email', with: 'test@example.com')
+  fill_in('Password', with: 'testtest')
+  click_button('Log in')
+end
