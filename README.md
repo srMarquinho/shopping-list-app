@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/srMarquinho/shopping-list-app.svg?branch=master)](https://travis-ci.org/srMarquinho/shopping-list-app)
+[![Coverage Status](https://coveralls.io/repos/github/srMarquinho/shopping-list-app/badge.svg?branch=master)](https://coveralls.io/github/srMarquinho/shopping-list-app?branch=master)
 
 # Shopping List Reminder
 
