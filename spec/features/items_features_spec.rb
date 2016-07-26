@@ -77,9 +77,11 @@ feature 'items' do
 
     let!(:shampoo){ Item.create(name:'Shampoo', description: 'Herbal essences', completed: false) }
 
-    scenario 'user can click a checkbox to complete an item' do
+    scenario 'user can click a checkbox to complete an item', :js => true do
       signup
-      check("#{shampoo.id}")
+      click_button("#{shampoo.id}")
+      sleep(5.seconds)
+      save_and_open_page
       # wait_for_ajax
       expect(shampoo.completed).to eq true
     end
