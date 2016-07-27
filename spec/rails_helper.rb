@@ -1,8 +1,24 @@
+require 'coveralls'
+Coveralls.wear!('rails')
+
+require 'simplecov'
+SimpleCov.formatters = SimpleCov::Formatter::HTMLFormatter
+# To add exceptions to test coverage:
+SimpleCov.start do
+  add_filter 'app/jobs'
+  add_filter 'app/mailers'
+  add_filter 'app/channels'
+end
+# replace following line with SimpleCov.start to get coverage stats locally
+SimpleCov.start 'rails'
+# run `open coverage/index.html` from the command line to view details
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
+
 require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
