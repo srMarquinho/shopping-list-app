@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'items' do
+feature 'Items' do
   context 'no items have been added' do
     scenario 'should display a prompt to add an item' do
       signup
@@ -71,8 +71,6 @@ feature 'items' do
       expect(page).not_to have_content 'Shampoo'
       expect(page).to have_content 'Item deleted successfully'
     end
-
   end
-
 
 end

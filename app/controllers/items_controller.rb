@@ -26,7 +26,6 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     @item.update(item_params)
-
     redirect_to '/items'
   end
 
@@ -39,9 +38,14 @@ class ItemsController < ApplicationController
   end
 
 
+  def toggle
+    @item = Item.find(params[:id])
+    @item.completed == false ? @item.update(completed: true) : @item.update(completed: false)
+  end
+
 
   def item_params
-    params.require(:item).permit(:name, :description)
+    params.require(:item).permit(:name, :description, :completed)
   end
 
 end
