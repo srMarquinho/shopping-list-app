@@ -11,6 +11,7 @@
   <body>
 
   <p id="demo"></p>
+  <div id='test'></div>
 
   <script>
 
@@ -22,6 +23,17 @@
             x.innerHTML = "Geolocation is not supported by this browser.";
         }
     }
+
+    // function checkItems(position){
+    //   $.getJSON( "/items/get_items", function( data ) {
+    //   //   var items = [];
+    //   //   $.each(data, function(i, field){
+    //       console.log(data)
+    //   //   });
+    //   })
+    // }
+
+
     function showPosition(position) {
         x.innerHTML = "Latitude: " + position.coords.latitude +
         "<br>Longitude: " + position.coords.longitude;
