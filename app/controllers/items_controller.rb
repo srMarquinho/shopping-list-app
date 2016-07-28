@@ -47,6 +47,12 @@ class ItemsController < ApplicationController
     @item.completed == false ? @item.update(completed: true) : @item.update(completed: false)
   end
 
+  def get_items
+    current_user.items.each { |item| p item.name }
+    p "==========Above=========="
+    render json: current_user.items
+  end
+
   def item_params
     params.require(:item).permit(:name, :description, :completed, :user_id)
   end

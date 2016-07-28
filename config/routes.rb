@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   # end
 
   root "items#index"
+
+  get 'items/get_items'
+
   resources :items do
     post 'toggle', on: :member
+
   end
 end

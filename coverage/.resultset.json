@@ -25,6 +25,10 @@
         1,
         null
       ],
+      "/Users/paulkenrick/Projects/makersacademy/shopping-list-app/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
       "/Users/paulkenrick/Projects/makersacademy/shopping-list-app/app/controllers/items_controller.rb": [
         1,
         null,
@@ -94,8 +98,12 @@
         1,
         null,
         null
+      ],
+      "/Users/paulkenrick/Projects/makersacademy/shopping-list-app/app/controllers/users_controller.rb": [
+        0,
+        0
       ]
     },
-    "timestamp": 1469715215
+    "timestamp": 1469723132
   }
 }
