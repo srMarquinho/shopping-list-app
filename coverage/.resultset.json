@@ -1,7 +1,10 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/MA/Google Drive/_MAKERS/Week10/shopping-list-app/app/models/user.rb": [
+      "/Users/paulkenrick/Projects/makersacademy/shopping-list-app/app/models/user.rb": [
+        1,
+        null,
+        null,
         1,
         null,
         null,
@@ -9,82 +12,90 @@
         null,
         null
       ],
-      "/Users/MA/Google Drive/_MAKERS/Week10/shopping-list-app/app/models/application_record.rb": [
+      "/Users/paulkenrick/Projects/makersacademy/shopping-list-app/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/MA/Google Drive/_MAKERS/Week10/shopping-list-app/app/helpers/application_helper.rb": [
+      "/Users/paulkenrick/Projects/makersacademy/shopping-list-app/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/MA/Google Drive/_MAKERS/Week10/shopping-list-app/app/helpers/items_helper.rb": [
+      "/Users/paulkenrick/Projects/makersacademy/shopping-list-app/app/helpers/items_helper.rb": [
         1,
         null
       ],
-      "/Users/MA/Google Drive/_MAKERS/Week10/shopping-list-app/app/controllers/items_controller.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        15,
-        null,
-        null,
-        1,
-        2,
-        null,
-        null,
-        1,
-        2,
-        2,
-        null,
-        null,
-        1,
+      "/Users/paulkenrick/Projects/makersacademy/shopping-list-app/app/controllers/items_controller.rb": [
         1,
         null,
         null,
         1,
+        null,
         1,
+        26,
         null,
         null,
         1,
+        9,
+        null,
+        null,
         1,
-        1,
+        9,
+        9,
+        9,
+        8,
+        null,
         1,
         null,
         null,
         null,
         1,
         1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
         1,
         1,
         1,
         null,
         null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
         null,
         1,
         1,
         1,
         null,
         null,
-        null,
         1,
-        3,
+        10,
         null,
         null,
         null
       ],
-      "/Users/MA/Google Drive/_MAKERS/Week10/shopping-list-app/app/controllers/application_controller.rb": [
+      "/Users/paulkenrick/Projects/makersacademy/shopping-list-app/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/Users/MA/Google Drive/_MAKERS/Week10/shopping-list-app/app/models/item.rb": [
+      "/Users/paulkenrick/Projects/makersacademy/shopping-list-app/app/models/item.rb": [
         1,
+        null,
+        1,
+        null,
+        1,
+        null,
         null
       ]
     },
-    "timestamp": 1469699987
+    "timestamp": 1469715215
   }
 }

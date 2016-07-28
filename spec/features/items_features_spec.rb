@@ -10,12 +10,10 @@ feature 'Items' do
   end
 
   context 'Items have been added' do
-    before do
-      Item.create(name: 'Shampoo')
-    end
-
+    
     scenario 'display items' do
       signup
+      add_item
       expect(page).to have_content('Shampoo')
       expect(page).not_to have_content('No items yet')
     end
@@ -24,32 +22,35 @@ feature 'Items' do
   context 'creating items' do
     scenario 'prompts user to fill out a form, then displays the new item' do
       signup
-      click_link 'Add an item'
-      fill_in 'Name', with: 'Shampoo'
-      click_button 'Create Item'
+      add_item
       expect(page).to have_content 'Shampoo'
       expect(current_path).to eq '/items'
+    end
+
+    scenario 'does not allow an item to be created with empty name or location' do
+      signup
+      add_item(name: 'x')
+      expect(page).not_to have_content('x')
+      # expect(page).to have_content('error')
     end
   end
 
   context 'viewing items' do
 
-    let!(:shampoo){ Item.create(name:'Shampoo') }
-
     scenario 'lets a user view a item' do
      signup
+     add_item
      click_link 'Shampoo'
      expect(page).to have_content 'Shampoo'
-     expect(current_path).to eq "/items/#{shampoo.id}"
+     expect(current_path).to eq "/items/#{Item.last.id}"
     end
   end
 
   context 'editing items' do
 
-    before { Item.create name: 'Shampoo', description: 'Herbal essences' }
-
     scenario 'let a user edit an item' do
      signup
+     add_item
      click_link 'Edit Shampoo'
      fill_in 'Name', with: 'Shampoo'
      fill_in 'Description', with: 'Herbal essences'
@@ -58,19 +59,36 @@ feature 'Items' do
      expect(page).to have_content 'Herbal essences'
      expect(current_path).to eq '/items'
     end
+
+    scenario 'do not let not owner user edit a restaurant' do
+      signup
+      add_item
+      signout
+      signup(email: 'test1@email.com')
+      expect(page).not_to have_content 'Shampoo'
+    end
+
   end
 
 
   context 'deleting items' do
 
-    before { Item.create name: 'Shampoo', description: 'Herbal essences' }
-
     scenario 'removes an item when a user clicks a delete link' do
       signup
+      add_item
       click_link 'Delete Shampoo'
       expect(page).not_to have_content 'Shampoo'
       expect(page).to have_content 'Item deleted successfully'
     end
+  
+    scenario 'do not let not owner user delete a restaurant' do
+      signup
+      add_item
+      signout
+      signup(email: 'test1@email.com')
+      expect(page).not_to have_content 'Shampoo'
+   end
+  
   end
 
 end
