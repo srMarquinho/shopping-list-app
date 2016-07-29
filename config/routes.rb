@@ -8,7 +8,6 @@ Rails.application.routes.draw do
 
   root "items#index"
   post 'items/coords'
-  get 'items/coords'
   resources :items do
     post 'toggle', on: :member
   end
