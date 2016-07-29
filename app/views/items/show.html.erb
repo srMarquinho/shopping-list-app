@@ -23,6 +23,7 @@
       <p> <%= link_to "Edit #{@item.name}", edit_item_path(@item) %>
       <p> <%= link_to "Delete #{@item.name}", item_path(@item), method: :delete %>
       <p> <%= @item.address %>
+      <p> <%= link_to "Back to checklist", items_path  %>
 
     </div>
 
