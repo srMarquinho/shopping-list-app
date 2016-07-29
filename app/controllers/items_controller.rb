@@ -14,10 +14,10 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user_id = current_user.id
-    @item.latitude = session[:lat]
-    @item.longitude = session[:lng]
-    @item.place_name = session[:name]
-    @item.address = session[:formatted_address]
+    @item.latitude = session[:latitude]
+    @item.longitude = session[:longitude]
+    @item.place_name = session[:place_name]
+    @item.address = session[:address]
     if @item.save
       redirect_to '/items'
     else
@@ -36,6 +36,10 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     @item.update(item_params)
+    @item.update(latitude: session[:latitude])
+    @item.update(longitude: session[:longitude])
+    @item.update(place_name: session[:place_name])
+    @item.update(address: session[:address])
     redirect_to '/items'
   end
 
@@ -52,14 +56,14 @@ class ItemsController < ApplicationController
   end
 
   def coords
-    session[:lat] = params[:lat]
-    session[:lng] = params[:lng]
-    session[:name] = params[:name]
-    session[:formatted_address] = params[:formatted_address]
+    session[:latitude] = params[:lat]
+    session[:longitude] = params[:lng]
+    session[:place_name] = params[:name]
+    session[:address] = params[:formatted_address]
   end
 
   def item_params
-    params.require(:item).permit(:name, :description, :completed, :address, :post_code, :city, :street, :latitude, :longitude, :country)
+    params.require(:item).permit(:name, :description, :completed, :address)
   end
 
 end
