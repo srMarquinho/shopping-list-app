@@ -33,6 +33,16 @@ feature 'Items' do
       expect(page).not_to have_content('X')
       # expect(page).to have_content('error')
     end
+
+    # scenario 'has a location when added by google maps' do
+    #   signup
+    #   click_link 'Add an item'
+    #   fill_in 'Name', with: 'Shampoo'
+    #   fill_in 'pac-input', with: '50 Commer, London, United Kingdom'
+    #   click_button 'Create Item'
+    #   click_link 'Shampoo'
+    #   expect(page).to have_content 'Aldgate East Tube'
+    # end
   end
 
   context 'viewing items' do

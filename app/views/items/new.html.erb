@@ -74,9 +74,12 @@
       // parameter when you first load the API. For example:
       // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
+
+
+
       function initAutocomplete() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 51.51735, lng: -0.0733},
+          center: {lat: 51.517345, lng: -0.0731781},
           zoom: 14,
           mapTypeId: 'roadmap'
         });
@@ -110,6 +113,10 @@
           // For each place, get the icon, name and location.
           var bounds = new google.maps.LatLngBounds();
           places.forEach(function(place) {
+
+            console.log(place)
+            var gName = place.name
+            var formattedAddress = place.formatted_address;
             var placeLat = place.geometry.location.lat();
             var placeLng = place.geometry.location.lng();
             if (!place.geometry) {
@@ -117,7 +124,7 @@
               return;
             }
 
-            makeAjax(placeLat, placeLng)
+            makeAjax(placeLat, placeLng, formattedAddress, gName)
 
 
             var icon = {
@@ -146,15 +153,13 @@
           map.fitBounds(bounds);
         });
 
-        function makeAjax(placeLat, placeLng){
-          console.log(placeLat)
-          console.log(placeLng)
+        function makeAjax(placeLat, placeLng, formattedAddress, gName){
           $.ajax({
             type: 'POST',
             url: '/items/coords',
             dataType: 'json',
             contentType: 'application/json',
-            data: JSON.stringify({lat: placeLat, lng: placeLng})
+            data: JSON.stringify({lat: placeLat, lng: placeLng, formatted_address: formattedAddress, name: gName})
           });
 
         }

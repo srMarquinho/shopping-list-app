@@ -4,18 +4,16 @@ class Item < ApplicationRecord
 
   belongs_to :user
 
-   geocoded_by :address
-   after_validation :geocode
+  # geocoded_by :place_id
+  # after_validation :geocode
 
-   reverse_geocoded_by :latitude, :longitude
-   after_validation :reverse_geocode
-
-
-   def address
-     [street, city, post_code, country].compact.join(', ')
-   end
+  #  reverse_geocoded_by :latitude, :longitude
+  #  after_validation :reverse_geocode
 
 
+  #  def address
+  #     [street, city, post_code, country].compact.join(', ')
+  #   end
 
 
 end

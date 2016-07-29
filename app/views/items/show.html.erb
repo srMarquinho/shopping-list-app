@@ -16,21 +16,21 @@
     </style>
   </head>
   <body>
-    <div id="item">
-      <p> <%= @item.name %>
-      <p> <%= @item.description %>
-      <p> <%= link_to "Back to checklist", items_path  %>
+    <div id="show-item-description-container">
+      <div id ='item-name'> <%= @item.name %> </div>
+      <div id='item-description'> <%= @item.description %> </div>
+      <div id='place-name'> <%= @item.place_name %> </div>
+      <div id='place-address'> <%= @item.address %> </div>
+    </div>
+    <div id='show-item-buttons'>
       <p> <%= link_to "Edit #{@item.name}", edit_item_path(@item) %>
       <p> <%= link_to "Delete #{@item.name}", item_path(@item), method: :delete %>
-      <p> <%= @item.address %>
       <p> <%= link_to "Back to checklist", items_path  %>
-
     </div>
 
     <div id="map"></div>
+    
     <script>
-
-
       var itemLat = <%= @item.latitude %>;
       var itemLng = <%= @item.longitude %>;
 

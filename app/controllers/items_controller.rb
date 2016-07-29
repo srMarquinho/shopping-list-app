@@ -16,6 +16,8 @@ class ItemsController < ApplicationController
     @item.user_id = current_user.id
     @item.latitude = session[:lat]
     @item.longitude = session[:lng]
+    @item.place_name = session[:name]
+    @item.address = session[:formatted_address]
     if @item.save
       redirect_to '/items'
     else
@@ -52,6 +54,8 @@ class ItemsController < ApplicationController
   def coords
     session[:lat] = params[:lat]
     session[:lng] = params[:lng]
+    session[:name] = params[:name]
+    session[:formatted_address] = params[:formatted_address]
   end
 
   def item_params
