@@ -4,39 +4,28 @@
     <title>Simple Map</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 100%;
-      }
-    </style>
   </head>
   <body>
-    <div id="item">
-      <p> <%= @item.name %>
-      <p> <%= @item.description %>
-      <p> <%= link_to "Back to checklist", items_path  %>
+    <div id="show-item-description-container">
+      <div id='item-name'> <%= @item.name %> </div>
+      <div id='item-description'> <%= @item.description %> </div>
+      <div id='place-name'> <%= @item.place_name %> </div>
+      <div id='place-address'> <%= @item.address %> </div>
+    </div>
+    <div id='show-item-buttons'>
       <p> <%= link_to "Edit #{@item.name}", edit_item_path(@item) %>
       <p> <%= link_to "Delete #{@item.name}", item_path(@item), method: :delete %>
-      <p> <%= @item.address %>
       <p> <%= link_to "Back to checklist", items_path  %>
-
     </div>
 
-    <div id="map"></div>
+    <div id="show-map"></div>
     <script>
-
-
       var itemLat = <%= @item.latitude %>;
       var itemLng = <%= @item.longitude %>;
 
       var map;
       function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
+        map = new google.maps.Map(document.getElementById('show-map'), {
           center: {lat: itemLat, lng: itemLng},
           zoom: 16
         });
