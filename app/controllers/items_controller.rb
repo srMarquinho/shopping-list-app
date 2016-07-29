@@ -55,6 +55,10 @@ class ItemsController < ApplicationController
     @item.completed == false ? @item.update(completed: true) : @item.update(completed: false)
   end
 
+  def get_items
+    render json: current_user.items
+  end
+
   def coords
     session[:latitude] = params[:lat]
     session[:longitude] = params[:lng]

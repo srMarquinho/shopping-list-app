@@ -26,7 +26,7 @@ Geocoder.configure(
   # :lookup => :google_places_details,
   #set default units to km
 
-  :units => :km,
+  :units => :mi,
 
   :timeout => 5,
 

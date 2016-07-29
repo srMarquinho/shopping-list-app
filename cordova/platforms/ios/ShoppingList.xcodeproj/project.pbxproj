@@ -18,6 +18,20 @@
 		DFF1BCE4E96547F09B4C6F51 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AA46BA35E54ABC939DE75A /* CDVLogger.m */; };
 		D8AE85706EC341F5B3672C6A /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3B4CF24D7D47E985C3D5C7 /* CDVLocation.m */; };
 		3031150CA74643D99DEBC83C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39FA1CDC24804B7B84C02343 /* CoreLocation.framework */; };
+		6C792D59C5874C7DB621ED77 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65252124869141E3BB4EA87C /* Accelerate.framework */; };
+		974261138AC84DF9BF1C520D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D80C432DA3FC479B920F1214 /* AVFoundation.framework */; };
+		6D806149D13A4E3F807F1178 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621C5D0D316E43D0A2284578 /* CoreBluetooth.framework */; };
+		84C28E5B74644FBE818986CB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD64A1EBA0F419E9C9468D5 /* CoreData.framework */; };
+		12AA414B3D034CD19FCF5DCD /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF50179D2EFC44CCA9DD42A5 /* CoreText.framework */; };
+		60E879D8523D4AD79695DF4C /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BC62BABD72F45D79A440BB5 /* GLKit.framework */; };
+		1CADEBEAAFFB4D55B0E02C87 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA438DFB8FF4ABD8B2EB2F4 /* ImageIO.framework */; };
+		7659C1620B14486592F6C70C /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D0967D3954DE4C169F8C8A1B /* libc++.dylib */; };
+		FE5172C5FCD04A0FAA93B100 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C0817408759C480D905F1F15 /* libicucore.dylib */; };
+		96A205F254834EA79660A89E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D19AB0DE784B2AA0566322 /* libz.dylib */; };
+		E0EF5A52478041018F002B8C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 474C606FC98744D88453B024 /* OpenGLES.framework */; };
+		E6C935855CC84ACF81EEA912 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E7E9A1711EE4B6E9552669C /* QuartzCore.framework */; };
+		96F516E0A17A4DFDAA902207 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1762DA5E3C0C4E4397C293CF /* SystemConfiguration.framework */; };
+		7E6623A7D62B42F993198B65 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B01D74293A54C32A90244DF /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +76,20 @@
 		9C3B4CF24D7D47E985C3D5C7 /* CDVLocation.m */ = {isa = PBXFileReference; name = "CDVLocation.m"; path = "cordova-plugin-geolocation/CDVLocation.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		B330F9ED7C9E4613B42FA393 /* CDVLocation.h */ = {isa = PBXFileReference; name = "CDVLocation.h"; path = "cordova-plugin-geolocation/CDVLocation.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		39FA1CDC24804B7B84C02343 /* CoreLocation.framework */ = {isa = PBXFileReference; name = "CoreLocation.framework"; path = "System/Library/Frameworks/CoreLocation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		65252124869141E3BB4EA87C /* Accelerate.framework */ = {isa = PBXFileReference; name = "Accelerate.framework"; path = "System/Library/Frameworks/Accelerate.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		D80C432DA3FC479B920F1214 /* AVFoundation.framework */ = {isa = PBXFileReference; name = "AVFoundation.framework"; path = "System/Library/Frameworks/AVFoundation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		621C5D0D316E43D0A2284578 /* CoreBluetooth.framework */ = {isa = PBXFileReference; name = "CoreBluetooth.framework"; path = "System/Library/Frameworks/CoreBluetooth.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		6DD64A1EBA0F419E9C9468D5 /* CoreData.framework */ = {isa = PBXFileReference; name = "CoreData.framework"; path = "System/Library/Frameworks/CoreData.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		AF50179D2EFC44CCA9DD42A5 /* CoreText.framework */ = {isa = PBXFileReference; name = "CoreText.framework"; path = "System/Library/Frameworks/CoreText.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		8BC62BABD72F45D79A440BB5 /* GLKit.framework */ = {isa = PBXFileReference; name = "GLKit.framework"; path = "System/Library/Frameworks/GLKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		7CA438DFB8FF4ABD8B2EB2F4 /* ImageIO.framework */ = {isa = PBXFileReference; name = "ImageIO.framework"; path = "System/Library/Frameworks/ImageIO.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		D0967D3954DE4C169F8C8A1B /* libc++.dylib */ = {isa = PBXFileReference; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = compiled.mach-o.dylib; explicitFileType = undefined; includeInIndex = 0; };
+		C0817408759C480D905F1F15 /* libicucore.dylib */ = {isa = PBXFileReference; name = "libicucore.dylib"; path = "usr/lib/libicucore.dylib"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = compiled.mach-o.dylib; explicitFileType = undefined; includeInIndex = 0; };
+		C4D19AB0DE784B2AA0566322 /* libz.dylib */ = {isa = PBXFileReference; name = "libz.dylib"; path = "usr/lib/libz.dylib"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = compiled.mach-o.dylib; explicitFileType = undefined; includeInIndex = 0; };
+		474C606FC98744D88453B024 /* OpenGLES.framework */ = {isa = PBXFileReference; name = "OpenGLES.framework"; path = "System/Library/Frameworks/OpenGLES.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		3E7E9A1711EE4B6E9552669C /* QuartzCore.framework */ = {isa = PBXFileReference; name = "QuartzCore.framework"; path = "System/Library/Frameworks/QuartzCore.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		1762DA5E3C0C4E4397C293CF /* SystemConfiguration.framework */ = {isa = PBXFileReference; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		2B01D74293A54C32A90244DF /* Security.framework */ = {isa = PBXFileReference; name = "Security.framework"; path = "System/Library/Frameworks/Security.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +99,20 @@
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				3031150CA74643D99DEBC83C /* CoreLocation.framework in Frameworks */,
+				6C792D59C5874C7DB621ED77 /* Accelerate.framework in Frameworks */,
+				974261138AC84DF9BF1C520D /* AVFoundation.framework in Frameworks */,
+				6D806149D13A4E3F807F1178 /* CoreBluetooth.framework in Frameworks */,
+				84C28E5B74644FBE818986CB /* CoreData.framework in Frameworks */,
+				12AA414B3D034CD19FCF5DCD /* CoreText.framework in Frameworks */,
+				60E879D8523D4AD79695DF4C /* GLKit.framework in Frameworks */,
+				1CADEBEAAFFB4D55B0E02C87 /* ImageIO.framework in Frameworks */,
+				7659C1620B14486592F6C70C /* libc++.dylib in Frameworks */,
+				FE5172C5FCD04A0FAA93B100 /* libicucore.dylib in Frameworks */,
+				96A205F254834EA79660A89E /* libz.dylib in Frameworks */,
+				E0EF5A52478041018F002B8C /* OpenGLES.framework in Frameworks */,
+				E6C935855CC84ACF81EEA912 /* QuartzCore.framework in Frameworks */,
+				96F516E0A17A4DFDAA902207 /* SystemConfiguration.framework in Frameworks */,
+				7E6623A7D62B42F993198B65 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +183,20 @@
 			isa = PBXGroup;
 			children = (
 				39FA1CDC24804B7B84C02343 /* CoreLocation.framework */,
+				65252124869141E3BB4EA87C /* Accelerate.framework */,
+				D80C432DA3FC479B920F1214 /* AVFoundation.framework */,
+				621C5D0D316E43D0A2284578 /* CoreBluetooth.framework */,
+				6DD64A1EBA0F419E9C9468D5 /* CoreData.framework */,
+				AF50179D2EFC44CCA9DD42A5 /* CoreText.framework */,
+				8BC62BABD72F45D79A440BB5 /* GLKit.framework */,
+				7CA438DFB8FF4ABD8B2EB2F4 /* ImageIO.framework */,
+				D0967D3954DE4C169F8C8A1B /* libc++.dylib */,
+				C0817408759C480D905F1F15 /* libicucore.dylib */,
+				C4D19AB0DE784B2AA0566322 /* libz.dylib */,
+				474C606FC98744D88453B024 /* OpenGLES.framework */,
+				3E7E9A1711EE4B6E9552669C /* QuartzCore.framework */,
+				1762DA5E3C0C4E4397C293CF /* SystemConfiguration.framework */,
+				2B01D74293A54C32A90244DF /* Security.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -316,6 +372,10 @@
 				INFOPLIST_FILE = "ShoppingList/ShoppingList-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_NAME = "ShoppingList";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"ShoppingList/Plugins/com.googlemaps.ios\"",
+				);
 			};
 			name = Debug;
 		};
@@ -335,6 +395,10 @@
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "ShoppingList/ShoppingList-Info.plist";
 				PRODUCT_NAME = "ShoppingList";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"ShoppingList/Plugins/com.googlemaps.ios\"",
+				);
 			};
 			name = Release;
 		};
