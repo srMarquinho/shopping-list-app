@@ -14,6 +14,8 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user_id = current_user.id
+    @item.latitude = session[:lat]
+    @item.longitude = session[:lng]
     if @item.save
       redirect_to '/items'
     else
@@ -45,6 +47,11 @@ class ItemsController < ApplicationController
   def toggle
     @item = Item.find(params[:id])
     @item.completed == false ? @item.update(completed: true) : @item.update(completed: false)
+  end
+
+  def coords
+    session[:lat] = params[:lat]
+    session[:lng] = params[:lng]
   end
 
   def item_params

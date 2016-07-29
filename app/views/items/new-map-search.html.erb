@@ -110,16 +110,10 @@
           // For each place, get the icon, name and location.
           var bounds = new google.maps.LatLngBounds();
           places.forEach(function(place) {
-            var placeLat = place.geometry.location.lat();
-            var placeLng = place.geometry.location.lng();
             if (!place.geometry) {
               console.log("Returned place contains no geometry");
               return;
             }
-
-            makeAjax(placeLat, placeLng)
-
-
             var icon = {
               url: place.icon,
               size: new google.maps.Size(71, 71),
@@ -145,21 +139,8 @@
           });
           map.fitBounds(bounds);
         });
-
-        function makeAjax(placeLat, placeLng){
-          console.log(placeLat)
-          console.log(placeLng)
-          $.ajax({
-            type: 'POST',
-            url: '/items/coords',
-            dataType: 'json',
-            contentType: 'application/json',
-            data: JSON.stringify({lat: placeLat, lng: placeLng})
-          });
-
-        }
-
       }
+
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUu8pN7l0vL1M1VSN0SApzCoL8OYYFoLw&libraries=places&callback=initAutocomplete"
          async defer></script>
