@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   root "items#index"
 
-  get 'items/get_items'
+  post 'items/get_user_location'
 
   post 'items/coords'
   resources :items do

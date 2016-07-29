@@ -11,8 +11,17 @@ function getLocation() {
 function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude +
            "<br>Longitude: " + position.coords.longitude;
+
+  $.ajax({
+    type: 'POST',
+    url: '/items/get_user_location',
+    dataType: 'jsonp',
+    contentType: 'application/json',
+    data: JSON.stringify({ lat: position.coords.latitude,
+                           lng: position.coords.longitude })
+    });
 }
 
-setInterval(function() {
+// setInterval(function() {
   getLocation();
-}, 500);
+// }, 2000);

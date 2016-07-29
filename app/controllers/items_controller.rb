@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = current_user.items.all
+    @user_position = session[:user_position]
   end
 
   def new
@@ -55,8 +56,11 @@ class ItemsController < ApplicationController
     @item.completed == false ? @item.update(completed: true) : @item.update(completed: false)
   end
 
-  def get_items
-    render json: current_user.items
+  def get_user_location
+    session[:user_position] = [params[:lat], params[:lng]]
+    @items = current_user.items.all.each do |item|
+      item.distance_from(session[:user_position])
+    end
   end
 
   def coords

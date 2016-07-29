@@ -4,16 +4,7 @@ class Item < ApplicationRecord
 
   belongs_to :user
 
-  # geocoded_by :place_id
-  # after_validation :geocode
-
-  #  reverse_geocoded_by :latitude, :longitude
-  #  after_validation :reverse_geocode
-
-
-  #  def address
-  #     [street, city, post_code, country].compact.join(', ')
-  #   end
-
-
+  def distance_from(position)
+    Geocoder::Calculations.distance_between( position, [self.latitude, self.longitude])
+  end
 end
