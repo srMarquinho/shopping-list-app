@@ -10,47 +10,45 @@
 
   <body>
 
-  <p id="demo"></p>
-  <div id='test'></div>
+    <p id="demo"></p>
+    <div id='test'></div>
 
-  <script>
+    <!-- sudocode:
+    <%= Geocoder::Calculations.distance_between([position.coords.latitude, position.coords.longitude], [item.latitude, itme.longitude]) %> -->
 
+    <script>
 
-    var x = document.getElementById("demo");
-    function getLocation() {
+      var x = document.getElementById("demo");
+      function getLocation() {
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
+          navigator.geolocation.getCurrentPosition(showPosition);
         } else {
-            x.innerHTML = "Geolocation is not supported by this browser.";
+          x.innerHTML = "Geolocation is not supported by this browser.";
         }
-    }
+      }
 
-
-    var items = [];
-    $.ajax({
+      var items = [];
+      $.ajax({
         type: 'GET',
         url: '/items/get_items',
-        success: function(json) {
-            json.forEach(function(item){
-                items.push(item)
-            })
+        success: function (json) {
+          json.forEach(function (item) {
+            items.push(item);
+          });
         }
-    });
+      });
 
+      function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+      }
 
-    function showPosition(position) {
-        x.innerHTML = "Latitude: " + position.coords.latitude +
-        "<br>Longitude: " + position.coords.longitude;
-    }
-
-  setInterval(function(){
-    getLocation();
-  }, 500);
-
-  </script>
+      setInterval(function () {
+        getLocation();
+      }, 500);
+    </script>
 
     <% if user_signed_in? %>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
     <% end %>
 
     <%= yield %>

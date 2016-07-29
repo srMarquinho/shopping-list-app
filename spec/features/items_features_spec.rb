@@ -10,7 +10,7 @@ feature 'Items' do
   end
 
   context 'Items have been added' do
-    
+
     scenario 'display items' do
       signup
       add_item
@@ -29,8 +29,8 @@ feature 'Items' do
 
     scenario 'does not allow an item to be created with empty name or location' do
       signup
-      add_item(name: 'x')
-      expect(page).not_to have_content('x')
+      add_item(name: 'X')
+      expect(page).not_to have_content('X')
       # expect(page).to have_content('error')
     end
   end
@@ -80,7 +80,7 @@ feature 'Items' do
       expect(page).not_to have_content 'Shampoo'
       expect(page).to have_content 'Item deleted successfully'
     end
-  
+
     scenario 'do not let not owner user delete a restaurant' do
       signup
       add_item
@@ -88,7 +88,7 @@ feature 'Items' do
       signup(email: 'test1@email.com')
       expect(page).not_to have_content 'Shampoo'
    end
-  
+
   end
 
 end
