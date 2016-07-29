@@ -22,7 +22,8 @@ Geocoder.configure(
 
 
   #geocoding service used
-  :lookup =>   :google,
+  :lookup => :google,
+  # :lookup => :google_places_details,
   #set default units to km
 
   :units => :mi,
