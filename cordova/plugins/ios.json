@@ -9,7 +9,17 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.example.shoppinglist"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.example.shoppinglist"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.example.shoppinglist"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.example.shoppinglist"
+        }
+    }
 }

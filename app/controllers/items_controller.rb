@@ -1,9 +1,10 @@
 class ItemsController < ApplicationController
 
-  before_action :authenticate_user!
+  # before_filter :login_required, except: [:get_items]
+  before_action :authenticate_user!, except: [:get_items]
 
   def index
-    @items = Item.all
+    @items = current_user.items.all
   end
 
   def new
@@ -11,8 +12,13 @@ class ItemsController < ApplicationController
   end
 
   def create
-   Item.create(item_params)
-   redirect_to '/items'
+    @item = Item.new(item_params)
+    @item.user_id = current_user.id
+    if @item.save
+      redirect_to '/items'
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -29,7 +35,6 @@ class ItemsController < ApplicationController
     redirect_to '/items'
   end
 
-
   def destroy
     @item = Item.find(params[:id])
     @item.destroy
@@ -37,12 +42,10 @@ class ItemsController < ApplicationController
     redirect_to '/items'
   end
 
-
   def toggle
     @item = Item.find(params[:id])
     @item.completed == false ? @item.update(completed: true) : @item.update(completed: false)
   end
-
 
   def item_params
     params.require(:item).permit(:name, :description, :completed, :address, :post_code, :city, :street, :latitude, :longitude, :country)

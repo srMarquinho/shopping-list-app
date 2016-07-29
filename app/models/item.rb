@@ -1,5 +1,9 @@
 class Item < ApplicationRecord
 
+  validates :name, length: { minimum: 2 }
+
+  belongs_to :user
+
    geocoded_by :address
    after_validation :geocode
 
@@ -10,6 +14,8 @@ class Item < ApplicationRecord
    def address
      [street, city, post_code, country].compact.join(', ')
    end
+
+
 
 
 end

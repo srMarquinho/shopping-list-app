@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20160728163939) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.boolean  "status"
     t.boolean  "completed"
     t.float    "latitude"
     t.float    "longitude"
@@ -28,6 +29,9 @@ ActiveRecord::Schema.define(version: 20160728163939) do
     t.string   "post_code"
     t.string   "country"
     t.string   "address"
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_items_on_user_id", using: :btree
+
   end
 
   create_table "users", force: :cascade do |t|
@@ -47,4 +51,5 @@ ActiveRecord::Schema.define(version: 20160728163939) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "items", "users"
 end
