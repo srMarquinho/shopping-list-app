@@ -1,9 +1,10 @@
 {
   "RSpec": {
     "coverage": {
-
       "/Users/abdullamahmood/projects/final_project/shopping-list-app/app/models/user.rb": [
-
+        1,
+        null,
+        null,
         1,
         null,
         null,
@@ -11,14 +12,11 @@
         null,
         null
       ],
-
       "/Users/abdullamahmood/projects/final_project/shopping-list-app/app/models/application_record.rb": [
-
         1,
         1,
         null
       ],
-
       "/Users/abdullamahmood/projects/final_project/shopping-list-app/app/helpers/application_helper.rb": [
         1,
         null
@@ -28,7 +26,6 @@
         null
       ],
       "/Users/abdullamahmood/projects/final_project/shopping-list-app/app/controllers/items_controller.rb": [
-
         1,
         null,
         null,
@@ -43,6 +40,8 @@
         null,
         null,
         1,
+        9,
+        9,
         9,
         9,
         9,
@@ -79,29 +78,45 @@
         null,
         null,
         1,
+        0,
+        0,
+        null,
+        null,
+        1,
         10,
         null,
         null,
         null
       ],
-
       "/Users/abdullamahmood/projects/final_project/shopping-list-app/app/controllers/application_controller.rb": [
-
         1,
         1,
         null
       ],
-
       "/Users/abdullamahmood/projects/final_project/shopping-list-app/app/models/item.rb": [
-
         1,
         null,
         1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        12,
+        null,
+        null,
+        null,
+        null,
         null,
         null
       ]
     },
-    "timestamp": 1469700074
-
+    "timestamp": 1469798319
   }
 }
