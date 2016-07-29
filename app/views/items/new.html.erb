@@ -1,1 +1,90 @@
-<%= render 'form' %>
+<head>
+
+  <style type="text/css">
+    #map-canvas {
+      height: 500px;
+    }
+  </style>
+
+  <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFMTWXgSU_57fkNSVjxEzgxjNsW0vr-sg&libraries=places&sensor=true">
+  </script>
+
+
+
+  <script type='text/javascript'>
+
+  var map;
+  var service;
+
+
+  function handleSearchResults(results, status){
+
+    console.log(results)
+  };
+
+  function performSearch(){
+
+    var request = {
+      location: {lat: -34.397, lng: 150.644},
+      bounds: map.getBounds(),
+      radius: '500',
+      query: 'restuarant'
+    };
+
+    service.nearbySearch(request, handleSearchResults);
+  };
+
+  function initialise(location){
+
+    console.log(location)
+
+    var defaultBounds = new google.maps.LatLngBounds(
+      new google.maps.LatLng(-33.8902, 151.1759),
+      new google.maps.LatLng(-33.8474, 151.2631));
+
+      var input = document.getElementById('location');
+      var options = {
+        bounds: defaultBounds,
+        types: ['establishment']
+      };
+
+      autocomplete = new google.maps.places.Autocomplete(input, options);
+      console.log(autocomplete.getPlace())
+
+
+    var map_options = {
+        center: {lat: -34.397, lng: 150.644},
+        zoom: 8
+    };
+
+    map = new google.maps.Map(document.getElementById("map-canvas"), map_options);
+
+    var marker = new google.maps.Marker({
+    position: {lat: -34.397, lng: 150.644},
+    map: map,
+    title: 'You\'re here!'
+  });
+
+  service = new google.maps.places.PlacesService(map);
+
+  google.maps.event.addListenerOnce(maps, 'bounds_changed', performSearch);
+  // performSearch();
+
+};
+
+  $(document).ready(function(){
+    navigator.geolocation.getCurrentPosition(initialise);
+  });
+
+
+
+  </script>
+
+</head>
+
+<body>
+  <%= render 'form' %>
+  Location<input id='location' type='text' name='location'>
+  <div id='map-canvas'></div>
+</body>
