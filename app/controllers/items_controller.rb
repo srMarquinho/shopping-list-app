@@ -50,7 +50,6 @@ class ItemsController < ApplicationController
   end
 
   def get_items
-    current_user.items.each { |item| item.name }
     render json: current_user.items
   end
 
