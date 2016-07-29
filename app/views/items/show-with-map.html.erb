@@ -60,12 +60,19 @@
     </style>
   </head>
   <body>
-    <div id="form">
-      <%= render 'form' %>
+    <div id="item">
+      <p> <%= @item.name %>
+      <p> <%= @item.description %>
+      <p> <%= link_to "Back to checklist", items_path  %>
+      <p> <%= @item.address %>
+
     </div>
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
     <div id="map"></div>
     <script>
+
+    var itemLat = <%= @item.latitude %>
+    var itemLng = <%= @item.longitude %>
       // This example adds a search box to a map, using the Google Place Autocomplete
       // feature. People can enter geographical searches. The search box will return a
       // pick list containing a mix of places and predicted search terms.
@@ -76,8 +83,8 @@
 
       function initAutocomplete() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 51.51735, lng: -0.0733},
-          zoom: 14,
+          center: {lat: itemLat, lng: itemLng},
+          zoom: 20,
           mapTypeId: 'roadmap'
         });
 
@@ -110,16 +117,10 @@
           // For each place, get the icon, name and location.
           var bounds = new google.maps.LatLngBounds();
           places.forEach(function(place) {
-            var placeLat = place.geometry.location.lat();
-            var placeLng = place.geometry.location.lng();
             if (!place.geometry) {
               console.log("Returned place contains no geometry");
               return;
             }
-
-            makeAjax(placeLat, placeLng)
-
-
             var icon = {
               url: place.icon,
               size: new google.maps.Size(71, 71),
@@ -132,7 +133,7 @@
             markers.push(new google.maps.Marker({
               map: map,
               icon: icon,
-              title: place.name,
+              title: item.name,
               position: place.geometry.location
             }));
 
@@ -145,21 +146,8 @@
           });
           map.fitBounds(bounds);
         });
-
-        function makeAjax(placeLat, placeLng){
-          console.log(placeLat)
-          console.log(placeLng)
-          $.ajax({
-            type: 'POST',
-            url: '/items/coords',
-            dataType: 'json',
-            contentType: 'application/json',
-            data: JSON.stringify({lat: placeLat, lng: placeLng})
-          });
-
-        }
-
       }
+
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUu8pN7l0vL1M1VSN0SApzCoL8OYYFoLw&libraries=places&callback=initAutocomplete"
          async defer></script>
