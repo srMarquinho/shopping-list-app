@@ -21,20 +21,12 @@ ActiveRecord::Schema.define(version: 20160728154032) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.boolean  "completed"
-    t.integer  "user_id"
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "street"
-    t.string   "city"
-    t.string   "post_code"
-    t.string   "country"
+    t.integer  "user_id"
     t.string   "address"
+    t.string   "place_name"
     t.index ["user_id"], name: "index_items_on_user_id", using: :btree
-  end
-
-  create_table "locations", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
