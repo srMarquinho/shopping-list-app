@@ -58,9 +58,12 @@ class ItemsController < ApplicationController
 
   def get_user_location
     session[:user_position] = [params[:lat], params[:lng]]
-    @items = current_user.items.all.each do |item|
-      item.distance_from(session[:user_position])
+    @close_items = []
+    current_user.items.all.each do |item|
+      item_distance = item.distance_from(session[:user_position])
+      @close_items << item if item_distance < 0.5
     end
+    render json: @close_items
   end
 
   def coords

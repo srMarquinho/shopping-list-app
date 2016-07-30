@@ -15,13 +15,18 @@ function showPosition(position) {
   $.ajax({
     type: 'POST',
     url: '/items/get_user_location',
-    dataType: 'jsonp',
+    dataType: 'json',
     contentType: 'application/json',
     data: JSON.stringify({ lat: position.coords.latitude,
-                           lng: position.coords.longitude })
-    });
-}
+                           lng: position.coords.longitude }),
+    success: function(json){
+      json.forEach(function(item){
+        alert("Don't forget to pick up " + item.name + ". You're not far away!")
+      });
+    }
+  });
 
-// setInterval(function() {
+};
+setInterval(function() {
   getLocation();
-// }, 2000);
+}, 10000);
