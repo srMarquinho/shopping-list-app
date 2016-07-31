@@ -10,17 +10,38 @@
 
   <body>
 
-    <% if user_signed_in? %>
-    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    <br />
-    <%= link_to "Checklist", items_path  %>
-    <br />
-    <%= link_to "Add an item", new_item_path %>
-    <% end %>
+      <p id="user-coordinates"></p>
+      <%= javascript_include_tag 'get_user_location.js' %>
+      <%= javascript_include_tag 'get_item_location.js' %>
+      <br/>
 
-    <%= yield %>
+      <% if user_signed_in? %>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+      <br/>
+      <%= link_to "Checklist", items_path  %>
+      <br/>
+      <%= link_to "Add an item", new_item_path %>
+      <% end %>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+      <%= yield %>
+
+      <% if notice %>
+      <div class="alert alert-warning alert-dismissible fade in" role="notice">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <%= notice %>
+      </div>
+      <% end %>
+      <% if alert %>
+      <div class="alert alert-danger alert-dismissible fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <%= alert %>
+      </div>
+      <% end %>
+
+    </div>
   </body>
 </html>
