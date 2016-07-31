@@ -4,5 +4,19 @@
   <%= f.label :description %>
   <%= f.text_field :description %>
   <%= f.hidden_field :completed, value: false %>
-  <%= f.submit id: 'create-item' %>
+  <%= f.hidden_field :place_name, id: 'place_name' %>
+  <%= f.hidden_field :address, id: 'address' %>
+  <%= f.hidden_field :latitude, id: 'latitude' %>
+  <%= f.hidden_field :longitude, id: 'longitude' %>
+  <%= f.submit id: 'create_item' %>
 <% end %>
+
+
+<script>
+  document.getElementById('create_item').addEventListener('click', function(){
+    $('#place_name').val(gName);
+    $('#address').val(formattedAddress);
+    $('#latitude').val(placeLat);
+    $('#longitude').val(placeLng);
+  });
+</script>

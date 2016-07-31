@@ -21,7 +21,7 @@ function showPosition(position) {
                            lng: position.coords.longitude }),
     success: function(json){
       json.forEach(function(item){
-        alert("Don't forget to pick up " + item.name + ". You're not far away!")
+        console.log(item.name)
       });
     }
   });

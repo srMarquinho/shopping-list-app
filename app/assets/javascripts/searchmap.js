@@ -8,7 +8,10 @@
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
 
-
+var gName;
+var formattedAdress;
+var placeLat;
+var placeLng;
 
 function initAutocomplete() {
   var map = new google.maps.Map(document.getElementById('search-map'), {
@@ -48,17 +51,14 @@ function initAutocomplete() {
     places.forEach(function(place) {
 
       console.log(place)
-      var gName = place.name
-      var formattedAddress = place.formatted_address;
-      var placeLat = place.geometry.location.lat();
-      var placeLng = place.geometry.location.lng();
+      gName = place.name
+      formattedAddress = place.formatted_address;
+      placeLat = place.geometry.location.lat();
+      placeLng = place.geometry.location.lng();
       if (!place.geometry) {
         console.log("Returned place contains no geometry");
         return;
       }
-
-      makeAjax(placeLat, placeLng, formattedAddress, gName)
-
 
       var icon = {
         url: place.icon,
@@ -86,15 +86,4 @@ function initAutocomplete() {
     map.fitBounds(bounds);
   });
 
-  function makeAjax(placeLat, placeLng, formattedAddress, gName){
-    $.ajax({
-      type: 'POST',
-      url: '/items/coords',
-      dataType: 'json',
-      contentType: 'application/json',
-      data: JSON.stringify({lat: placeLat, lng: placeLng, formatted_address: formattedAddress, name: gName})
-    });
-
-  }
-
-}
+};
