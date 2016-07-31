@@ -9,7 +9,7 @@
 
 
 var gName;
-var formattedAdress;
+var formattedAddress;
 var placeLat;
 var placeLng;
 
