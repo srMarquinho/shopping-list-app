@@ -12,8 +12,12 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/coverage/*
 
 # Ignore Byebug command history file.
 .byebug_history
 .DS_Store
+<<<<<<< 4dcb81d5b90374ac44dcbf760674a6248b18488b
 /coverage
+=======
+>>>>>>> signin page
