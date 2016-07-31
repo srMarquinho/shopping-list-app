@@ -15,7 +15,6 @@
     <div id='show-item-buttons'>
       <p> <%= link_to "Edit #{@item.name}", edit_item_path(@item) %>
       <p> <%= link_to "Delete #{@item.name}", item_path(@item), method: :delete %>
-      <p> <%= link_to "Back to checklist", items_path  %>
     </div>
 
     <div id="show-map"></div>
