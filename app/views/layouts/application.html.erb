@@ -9,16 +9,13 @@
   </head>
 
   <body>
-<<<<<<< 4dcb81d5b90374ac44dcbf760674a6248b18488b
 
-=======
-    <br />
-    <br />
->>>>>>> signin page
     <% if user_signed_in? %>
     <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
     <br />
     <%= link_to "Checklist", items_path  %>
+    <br />
+    <%= link_to "Add an item", new_item_path %>
     <% end %>
 
     <%= yield %>
