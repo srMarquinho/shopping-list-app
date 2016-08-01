@@ -1,5 +1,12 @@
+<br />
+<br />
+
 <% if @items.any? %>
   <% @items.each do |item| %>
+    <h3>
+      <input type="checkbox" class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>" <%= item.completed ? "checked" : "unchecked" %> >
+      <%= link_to item.name, item_path(item) %>
+    </h3>
 
     <%= item.description %>
     <br>
