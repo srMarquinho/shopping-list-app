@@ -18,10 +18,19 @@
         },
         "cordova-plugin-dialogs": {
             "PACKAGE_NAME": "com.example.shoppinglist"
+        },
+        "de.appplant.cordova.plugin.local-notification": {
+            "PACKAGE_NAME": "com.example.shoppinglist"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.example.shoppinglist"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.example.shoppinglist"
+        },
+        "cordova-plugin-app-event": {
             "PACKAGE_NAME": "com.example.shoppinglist"
         }
     }

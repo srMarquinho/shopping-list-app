@@ -36,7 +36,7 @@ function initAutocomplete() {
   searchBox.addListener('places_changed', function() {
     var places = searchBox.getPlaces();
 
-    if (places.length == 0) {
+    if (places.length === 0) {
       return;
     }
 
@@ -49,9 +49,7 @@ function initAutocomplete() {
     // For each place, get the icon, name and location.
     var bounds = new google.maps.LatLngBounds();
     places.forEach(function(place) {
-
-      console.log(place)
-      gName = place.name
+      gName = place.name;
       formattedAddress = place.formatted_address;
       placeLat = place.geometry.location.lat();
       placeLng = place.geometry.location.lng();
@@ -86,4 +84,4 @@ function initAutocomplete() {
     map.fitBounds(bounds);
   });
 
-};
+}

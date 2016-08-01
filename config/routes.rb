@@ -10,9 +10,10 @@ Rails.application.routes.draw do
 
   post 'items/get_user_location'
 
+  get 'items/get_item_location'
+
   post 'items/coords'
   resources :items do
     post 'toggle', on: :member
-
   end
 end
