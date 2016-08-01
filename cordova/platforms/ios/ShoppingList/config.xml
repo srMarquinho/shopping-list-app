@@ -21,6 +21,9 @@
     <feature name="Geolocation">
         <param name="ios-package" value="CDVLocation" />
     </feature>
+    <feature name="Notification">
+        <param name="ios-package" value="CDVNotification" />
+    </feature>
     <name>ShoppingList</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
