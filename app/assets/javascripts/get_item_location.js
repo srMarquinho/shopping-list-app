@@ -1,11 +1,9 @@
-// $.ajax({
-//   type: 'POST',
-//   url: '/items/get_user_location',
-//   success: function(json) {
-//     // console.log(json);
-//     json.forEach(function(item) {
-//     console.log(item)
-//     console.log("hello")
-//     });
-//   }
-// });
+$.ajax({
+  type: 'GET',
+  url: '/items/get_item_location',
+  success: function(json) {
+    json.forEach(function(item) {
+          window.alert(item.name + " is near you!");
+    });
+  }
+});
