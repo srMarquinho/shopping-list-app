@@ -29,6 +29,13 @@
           center: {lat: itemLat, lng: itemLng},
           zoom: 16
         });
+
+        var marker = new google.maps.Marker({
+         position: {lat: itemLat, lng: itemLng},
+         map: map,
+         icon: 
+         title: 'Hello World!'
+       });
       }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUu8pN7l0vL1M1VSN0SApzCoL8OYYFoLw&callback=initMap"
