@@ -4,13 +4,13 @@ function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
   } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
+    window.alert("Geolocation is not supported by this browser.");
   }
 }
 
 function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude +
-    "<br>Longitude: " + position.coords.longitude;
+//   x.innerHTML = "Latitude: " + position.coords.latitude +
+//     "<br>Longitude: " + position.coords.longitude;
 
   $.ajax({
     type: 'POST',
@@ -23,6 +23,7 @@ function showPosition(position) {
     })
   });
 }
+
 setInterval(function() {
   getLocation();
 }, 2000);
