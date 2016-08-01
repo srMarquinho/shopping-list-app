@@ -1,13 +1,11 @@
-// var items = [];
 // $.ajax({
-//   type: 'GET',
-//   url: '/items/get_items',
+//   type: 'POST',
+//   url: '/items/get_user_location',
 //   success: function(json) {
 //     // console.log(json);
 //     json.forEach(function(item) {
-//       items.push(item);
-//       // console.log(item.latitude);
-//       // console.log(item.longitude);
+//     console.log(item)
+//     console.log("hello")
 //     });
 //   }
 // });
