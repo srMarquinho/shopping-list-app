@@ -61,7 +61,7 @@ feature 'Items' do
     scenario 'let a user edit an item' do
      signup
      add_item
-     click_link 'Edit Shampoo'
+     click_link 'Edit'
      fill_in 'Name', with: 'Shampoo'
      fill_in 'Description', with: 'Herbal essences'
      click_button 'Update Item'
@@ -86,7 +86,7 @@ feature 'Items' do
     scenario 'removes an item when a user clicks a delete link' do
       signup
       add_item
-      click_link 'Delete Shampoo'
+      click_link 'Delete'
       expect(page).not_to have_content 'Shampoo'
       expect(page).to have_content 'Item deleted successfully'
     end

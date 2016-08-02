@@ -9,7 +9,7 @@ function getItemLocation(){
         json.forEach(function(item) {
           alertString += ("- " + item.name + "\n");
         });
-        alert(alertString);
+        // alert(alertString);
         itemCounter = json.length;
       }
     }
