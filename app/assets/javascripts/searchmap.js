@@ -15,10 +15,25 @@ var placeLng;
 
 function initAutocomplete() {
   var map = new google.maps.Map(document.getElementById('search-map'), {
-    center: {lat: 51.517345, lng: -0.0731781},
+    center: {lat: 55.5, lng: 1},
     zoom: 14,
     mapTypeId: 'roadmap'
   });
+
+    var youIcon = 'https://s31.postimg.org/6gsyhqdzf/you_icon2.png'
+    var myMarker = new google.maps.Marker({
+      map: map,
+      icon: youIcon,
+    });
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            myLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            myMarker.setPosition(myLocation);
+            map.setCenter(myLocation)
+        });
+    }
+
 
   // Create the search box and link it to the UI element.
   var input = document.getElementById('pac-input');
