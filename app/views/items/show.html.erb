@@ -1,48 +1,44 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Simple Map</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-  </head>
-  <body>
-    <div id=item-card>
-      <div id="show-item-description-container">
-        <div id='item-name'> <%= @item.name %> </div>
-        <div id='item-description'> <%= @item.description %> </div>
-        <div id='place-name'> <%= @item.place_name %> </div>
-        <div id='place-address'> <%= @item.address %> </div>
-      </div>
-      <div id='show-item-buttons'>
-        <p> <%= link_to "Edit #{@item.name}", edit_item_path(@item) %>
-        <p> <%= link_to "Delete #{@item.name}", item_path(@item), method: :delete %>
-        <p> <%= link_to "Back to checklist", items_path  %>
-      </div>
-    </div>
+<br />
+<br />
 
-    <div id="show-map"></div>
-    <script>
-      var itemLat = <%= @item.latitude %>;
-      var itemLng = <%= @item.longitude %>;
+<div id=item-card>
+  <div id="show-item-description-container">
+    <div id='item-name'> <%= @item.name %> </div>
+    <div id='item-description'> <%= @item.description %> </div>
+    <div id='place-name'> <%= @item.place_name %> </div>
+    <div id='place-address'> <%= @item.address %> </div>
+  </div>
 
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('show-map'), {
-          center: {
-            lat: itemLat,
-            lng: itemLng
-          },
-          zoom: 16
-        });
+  <div id='show-item-buttons'>
+    <p> <%= link_to "Edit #{@item.name}", edit_item_path(@item) %>
+    <p> <%= link_to "Delete #{@item.name}", item_path(@item), method: :delete %>
+    <p> <%= link_to "Back to checklist", items_path  %>
+  </div>
+</div>
 
-        var marker = new google.maps.Marker({
-          position: {
-            lat: itemLat,
-            lng: itemLng
-          },
-          map: map,
-          title: 'Hello World!'
-        });
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUu8pN7l0vL1M1VSN0SApzCoL8OYYFoLw&callback=initMap" async defer></script>
+<div id="show-map"></div>
+<script>
+  var itemLat = <%= @item.latitude %>;
+  var itemLng = <%= @item.longitude %>;
+
+  var map;
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('show-map'), {
+      center: {
+        lat: itemLat,
+        lng: itemLng
+      },
+      zoom: 16
+    });
+
+    var marker = new google.maps.Marker({
+      position: {
+        lat: itemLat,
+        lng: itemLng
+      },
+      map: map,
+      title: 'Hello World!'
+    });
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUu8pN7l0vL1M1VSN0SApzCoL8OYYFoLw&callback=initMap" async defer></script>
