@@ -52,7 +52,7 @@ feature 'Items' do
      add_item
      click_link 'Shampoo'
      expect(page).to have_content 'Shampoo'
-     expect(current_path).to eq "/items/#{Item.last.id}"
+     expect(current_path).to eq "/items"
     end
   end
 
