@@ -1,14 +1,17 @@
 function getItemLocation(){
+  var itemsBefore = itemCounter;
   $.ajax({
     type: 'GET',
     url: '/items/get_item_location',
     success: function(json) {
-      json.forEach(function(item) {
-          counter += 1;
-          if (counter === 1){
-              alert("Don't forget to pick up: " + item.name)
-          }
-      });
+      if (json.length !== itemsBefore) {
+        var alertString = "Don't forget to pick up:\n";
+        json.forEach(function(item) {
+          alertString += ("- " + item.name + "\n");
+        });
+        alert(alertString);
+        itemCounter = json.length;
+      }
     }
   });
 };
