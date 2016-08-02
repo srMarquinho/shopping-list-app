@@ -11,8 +11,9 @@
   <div class="card">
     <p>
       <a class="" data-toggle="collapse" href="#collapse<%= item.id %>" aria-expanded="false" aria-controls="collapseExample">
-        <h3><%= item.name + '    '%> <input type="checkbox" class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>" <%= item.completed ? "checked" : "unchecked" %> ></h3>
+        <h3 style="display: inline"><%= item.name %></h3>
       </a>
+      <input type="checkbox" class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>" <%= item.completed ? "checked" : "unchecked" %> >
     </p>
     <div class="collapse" id="collapse<%= item.id %>">
       <div class="card card-block">
@@ -34,8 +35,9 @@
   <div class="card">
     <p>
       <a class="" data-toggle="collapse" href="#collapse<%= item.id %>" aria-expanded="false" aria-controls="collapseExample">
-        <h3><%= item.name %> <input type="checkbox" class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>" <%= item.completed ? "checked" : "unchecked" %> ></h3>
+        <h3 style="display: inline"><%= item.name %></h3>
       </a>
+      <input type="checkbox" class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>" <%= item.completed ? "checked" : "unchecked" %> >
     </p>
     <div class="collapse" id="collapse<%= item.id %>">
       <div class="card card-block">
