@@ -1,5 +1,24 @@
-<% if @items.any? %>
-  <% @items.each do |item| %>
+<% if @completed_items.empty? && @incomplete_items.empty? %>
+  No items yet
+
+<% else %>
+
+  <% @incomplete_items.each do |item| %>
+  <h3>
+    <input type="checkbox" class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>" <%= item.completed ? "checked" : "unchecked" %> >
+    <%= link_to item.name, item_path(item) %>
+  </h3>
+
+  <%= item.description %>
+  <br>
+  You are <%= item.distance_from(@user_position).round(2) %> miles away from this item.
+  <br />
+  <%= link_to "Edit #{item.name}", edit_item_path(item) %>
+  <br>
+  <%= link_to "Delete #{item.name}", item_path(item), method: :delete %>
+  <% end %>
+
+  <% @completed_items.each do |item| %>
     <h3>
       <input type="checkbox" class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>" <%= item.completed ? "checked" : "unchecked" %> >
       <%= link_to item.name, item_path(item) %>
@@ -14,8 +33,7 @@
     <%= link_to "Delete #{item.name}", item_path(item), method: :delete %>
   <% end %>
 
-<% else %>
-  No items yet
+
 <% end %>
 
 

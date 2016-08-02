@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-08-01T16:48:27+01:00">2016-08-01T16:48:27+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-08-02T10:55:09+01:00">2016-08-02T10:55:09+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">85.19%</span></span>
+    (<span class="covered_percent"><span class="yellow">85.71%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.65
+         3.69
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>8</b> files in total.
-    <b>54</b> relevant lines. 
-    <span class="green"><b>46</b> lines covered</span> and
+    <b>56</b> relevant lines. 
+    <span class="green"><b>48</b> lines covered</span> and
     <span class="red"><b>8</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -62,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#49376f1af004d49e24b72787c82d61178c1dd59e" class="src_link" title="app/controllers/items_controller.rb">app/controllers/items_controller.rb</a></td>
-        <td class="red strong">79.49 %</td>
-        <td>69</td>
-        <td>39</td>
-        <td>31</td>
+        <td class="yellow strong">80.49 %</td>
+        <td>71</td>
+        <td>41</td>
+        <td>33</td>
         <td>8</td>
-        <td>3.1</td>
+        <td>4.5</td>
       </tr>
       
       <tr>
@@ -139,19 +139,19 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="yellow">80.49%</span></span>
+    (<span class="covered_percent"><span class="yellow">81.4%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.0
+         4.34
        </span>
     </span> hits/line)
   </h2>
   <a name="Controllers"></a>
   <div>
     <b>2</b> files in total.
-    <b>41</b> relevant lines. 
-    <span class="green"><b>33</b> lines covered</span> and
+    <b>43</b> relevant lines. 
+    <span class="green"><b>35</b> lines covered</span> and
     <span class="red"><b>8</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -180,12 +180,12 @@
       
       <tr>
         <td class="strong"><a href="#49376f1af004d49e24b72787c82d61178c1dd59e" class="src_link" title="app/controllers/items_controller.rb">app/controllers/items_controller.rb</a></td>
-        <td class="red strong">79.49 %</td>
-        <td>69</td>
-        <td>39</td>
-        <td>31</td>
+        <td class="yellow strong">80.49 %</td>
+        <td>71</td>
+        <td>41</td>
+        <td>33</td>
         <td>8</td>
-        <td>3.1</td>
+        <td>4.5</td>
       </tr>
       
     </tbody>
@@ -487,10 +487,10 @@
         <div class="source_table" id="49376f1af004d49e24b72787c82d61178c1dd59e">
   <div class="header">
     <h3>app/controllers/items_controller.rb</h3>
-    <h4><span class="red">79.49 %</span> covered</h4>
+    <h4><span class="yellow">80.49 %</span> covered</h4>
     <div>
-      <b>39</b> relevant lines. 
-      <span class="green"><b>31</b> lines covered</span> and
+      <b>41</b> relevant lines. 
+      <span class="green"><b>33</b> lines covered</span> and
       <span class="red"><b>8</b> lines missed.</span>
     </div>
   </div>
@@ -537,376 +537,388 @@
         <li class="covered" data-hits="24" data-linenumber="7">
           <span class="hits">24</span>
           
-          <code class="ruby">    @items = current_user.items.all</code>
+          <code class="ruby">    @user_position = session[:user_position]</code>
         </li>
       
         <li class="covered" data-hits="24" data-linenumber="8">
           <span class="hits">24</span>
           
-          <code class="ruby">    @user_position = session[:user_position]</code>
+          <code class="ruby">    items = current_user.items.all.order(:updated_at).reverse</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="covered" data-hits="32" data-linenumber="9">
+          <span class="hits">32</span>
+          
+          <code class="ruby">    @completed_items = items.select{ |item| item.completed }</code>
+        </li>
+      
+        <li class="covered" data-hits="32" data-linenumber="10">
+          <span class="hits">32</span>
+          
+          <code class="ruby">    @incomplete_items = items.select{ |item| !item.completed }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
+        <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
           <code class="ruby">  def new</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="12">
+        <li class="covered" data-hits="8" data-linenumber="14">
           <span class="hits">8</span>
           
           <code class="ruby">    @item = Item.new</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="16">
+        <li class="covered" data-hits="8" data-linenumber="18">
           <span class="hits">8</span>
           
           <code class="ruby">    @item = Item.new(item_params)</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="17">
+        <li class="covered" data-hits="8" data-linenumber="19">
           <span class="hits">8</span>
           
           <code class="ruby">    @item.user_id = current_user.id</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="19">
+        <li class="covered" data-hits="8" data-linenumber="21">
           <span class="hits">8</span>
           
           <code class="ruby">    if @item.save</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="20">
+        <li class="covered" data-hits="7" data-linenumber="22">
           <span class="hits">7</span>
           
           <code class="ruby">      redirect_to &#39;/items&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
+        <li class="covered" data-hits="1" data-linenumber="24">
           <span class="hits">1</span>
           
           <code class="ruby">      render &#39;new&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="27">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="28">
           <span class="hits">1</span>
           
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
           <code class="ruby">    @item = Item.find(params[:id])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="30">
+        <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
           <code class="ruby">  def edit</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="31">
+        <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
           <code class="ruby">    @item = Item.find(params[:id])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="never" data-hits="" data-linenumber="34">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="34">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def update</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="35">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @item = Item.find(params[:id])</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="36">
           <span class="hits">1</span>
           
-          <code class="ruby">    @item.update(item_params)</code>
+          <code class="ruby">  def update</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="37">
           <span class="hits">1</span>
           
+          <code class="ruby">    @item = Item.find(params[:id])</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    @item.update(item_params)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
+          
           <code class="ruby">    redirect_to &#39;/items&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="never" data-hits="" data-linenumber="40">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="never" data-hits="" data-linenumber="41">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="40">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def destroy</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="41">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    @item = Item.find(params[:id])</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="42">
           <span class="hits">1</span>
           
-          <code class="ruby">    @item.destroy</code>
+          <code class="ruby">  def destroy</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
-          <code class="ruby">    flash[:notice] = &#39;Item deleted successfully&#39;</code>
+          <code class="ruby">    @item = Item.find(params[:id])</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="44">
           <span class="hits">1</span>
           
+          <code class="ruby">    @item.destroy</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="45">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    flash[:notice] = &#39;Item deleted successfully&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="46">
+          <span class="hits">1</span>
+          
           <code class="ruby">    redirect_to &#39;/items&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="45">
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="46">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="47">
+        <li class="covered" data-hits="1" data-linenumber="49">
           <span class="hits">1</span>
           
           <code class="ruby">  def toggle</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="48">
+        <li class="missed" data-hits="0" data-linenumber="50">
           
           
           <code class="ruby">    @item = Item.find(params[:id])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="49">
+        <li class="missed" data-hits="0" data-linenumber="51">
           
           
           <code class="ruby">    @item.completed == false ? @item.update(completed: true) : @item.update(completed: false)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="50">
+        <li class="never" data-hits="" data-linenumber="52">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="51">
+        <li class="never" data-hits="" data-linenumber="53">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="52">
+        <li class="covered" data-hits="1" data-linenumber="54">
           <span class="hits">1</span>
           
           <code class="ruby">  def get_user_location</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="53">
+        <li class="missed" data-hits="0" data-linenumber="55">
           
           
           <code class="ruby">    session[:user_position] = [params[:lat], params[:lng]]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="never" data-hits="" data-linenumber="56">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="57">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="56">
+        <li class="covered" data-hits="1" data-linenumber="58">
           <span class="hits">1</span>
           
           <code class="ruby">  def get_item_location</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="57">
+        <li class="missed" data-hits="0" data-linenumber="59">
           
           
           <code class="ruby">    close_items = []</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="58">
+        <li class="missed" data-hits="0" data-linenumber="60">
           
           
           <code class="ruby">    current_user.items.all.each do |item|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="59">
+        <li class="missed" data-hits="0" data-linenumber="61">
           
           
           <code class="ruby">      item_distance = item.distance_from(session[:user_position])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="60">
+        <li class="missed" data-hits="0" data-linenumber="62">
           
           
           <code class="ruby">      close_items &lt;&lt; item if item_distance &lt; 1.0</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="never" data-hits="" data-linenumber="63">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="62">
+        <li class="missed" data-hits="0" data-linenumber="64">
           
           
           <code class="ruby">    render json: close_items</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="65">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="64">
+        <li class="never" data-hits="" data-linenumber="66">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="65">
+        <li class="covered" data-hits="1" data-linenumber="67">
           <span class="hits">1</span>
           
           <code class="ruby">  def item_params</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="66">
+        <li class="covered" data-hits="9" data-linenumber="68">
           <span class="hits">9</span>
           
           <code class="ruby">    params.require(:item).permit(:name, :description, :completed, :place_name, :address, :latitude, :longitude)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="67">
+        <li class="never" data-hits="" data-linenumber="69">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="68">
+        <li class="never" data-hits="" data-linenumber="70">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="69">
+        <li class="never" data-hits="" data-linenumber="71">
           
           
           <code class="ruby">end</code>
