@@ -24,6 +24,9 @@ function showPosition(position) {
   });
 }
 
+var counter = 0;
+
 setInterval(function() {
   getLocation();
+  getItemLocation();
 }, 2000);

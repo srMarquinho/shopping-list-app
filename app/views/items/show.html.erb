@@ -28,16 +28,31 @@
         lat: itemLat,
         lng: itemLng
       },
-      zoom: 16
+      zoom: 15
     });
 
-    var marker = new google.maps.Marker({
+    var youIcon = 'https://s31.postimg.org/m9bv4fq7f/you_icon.png'
+    var itemIcon = 'https://s32.postimg.org/loajgnlg5/item_icon.png'
+    var myMarker = new google.maps.Marker({
+      map: map,
+      icon: youIcon,
+    });
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            myLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            myMarker.setPosition(myLocation);
+        });
+    }
+
+
+    var itemMarker = new google.maps.Marker({
       position: {
         lat: itemLat,
         lng: itemLng
       },
       map: map,
-      title: 'Hello World!'
+      icon: itemIcon
     });
   }
 </script>
