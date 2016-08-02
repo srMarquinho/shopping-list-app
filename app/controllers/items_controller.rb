@@ -59,7 +59,7 @@ class ItemsController < ApplicationController
     close_items = []
     current_user.items.all.each do |item|
       item_distance = item.distance_from(session[:user_position])
-      close_items << item if item_distance < 1.0
+      close_items << item if (item_distance < 0.5 && !item.completed)
     end
     render json: close_items
   end

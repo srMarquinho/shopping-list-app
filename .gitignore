@@ -20,3 +20,5 @@
 coverage/
 /coverage/*
 /coverage/assets/*
+/coverage/index.html
+/coverage/.resultset.json

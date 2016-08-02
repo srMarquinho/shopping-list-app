@@ -7,7 +7,7 @@ function getItemLocation(){
       if (json.length !== itemsBefore) {
         var alertString = "Don't forget to pick up:\n";
         json.forEach(function(item) {
-          alertString += ("- " + item.name + "\n");
+          alertString += ("- " + item.name + " from " + item.place_name + "\n");
         });
         // alert(alertString);
         itemCounter = json.length;
