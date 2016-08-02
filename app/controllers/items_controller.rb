@@ -4,8 +4,10 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:get_items]
 
   def index
-    @items = current_user.items.all
     @user_position = session[:user_position]
+    items = current_user.items.all.order(:updated_at).reverse
+    @completed_items = items.select{ |item| item.completed }
+    @incomplete_items = items.select{ |item| !item.completed }
   end
 
   def new
