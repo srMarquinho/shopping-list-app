@@ -12,8 +12,11 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/coverage/*
 
 # Ignore Byebug command history file.
 .byebug_history
 .DS_Store
-/coverage
+coverage/
+/coverage/*
+/coverage/assets/*
