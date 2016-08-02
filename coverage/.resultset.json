@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/MA/Desktop/shopping-list-app/app/models/user.rb": [
+      "/Users/paulkenrick/Projects/makersacademy/shopping-list-app/app/models/user.rb": [
         1,
         null,
         null,
@@ -12,24 +12,24 @@
         null,
         null
       ],
-      "/Users/MA/Desktop/shopping-list-app/app/models/application_record.rb": [
+      "/Users/paulkenrick/Projects/makersacademy/shopping-list-app/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/Users/MA/Desktop/shopping-list-app/app/helpers/application_helper.rb": [
+      "/Users/paulkenrick/Projects/makersacademy/shopping-list-app/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/MA/Desktop/shopping-list-app/app/helpers/items_helper.rb": [
+      "/Users/paulkenrick/Projects/makersacademy/shopping-list-app/app/helpers/items_helper.rb": [
         1,
         null
       ],
-      "/Users/MA/Desktop/shopping-list-app/app/helpers/users_helper.rb": [
+      "/Users/paulkenrick/Projects/makersacademy/shopping-list-app/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/MA/Desktop/shopping-list-app/app/controllers/items_controller.rb": [
+      "/Users/paulkenrick/Projects/makersacademy/shopping-list-app/app/controllers/items_controller.rb": [
         1,
         null,
         null,
@@ -102,12 +102,12 @@
         null,
         null
       ],
-      "/Users/MA/Desktop/shopping-list-app/app/controllers/application_controller.rb": [
+      "/Users/paulkenrick/Projects/makersacademy/shopping-list-app/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/Users/MA/Desktop/shopping-list-app/app/models/item.rb": [
+      "/Users/paulkenrick/Projects/makersacademy/shopping-list-app/app/models/item.rb": [
         1,
         null,
         1,
@@ -120,6 +120,6 @@
         null
       ]
     },
-    "timestamp": 1470133229
+    "timestamp": 1470153643
   }
 }
