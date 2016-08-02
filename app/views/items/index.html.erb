@@ -3,37 +3,53 @@
 
 <% if @completed_items.empty? && @incomplete_items.empty? %>
   No items yet
-
 <% else %>
 
-  <% @incomplete_items.each do |item| %>
-  <h3>
-    <input type="checkbox" class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>" <%= item.completed ? "checked" : "unchecked" %> >
-    <%= link_to item.name, item_path(item) %>
-  </h3>
 
-  <%= item.description %>
-  <br>
-  You are <%= item.distance_from(@user_position).round(2) %> miles away from this item.
-  <br />
-  <%= link_to "Edit #{item.name}", edit_item_path(item) %>
-  <br>
-  <%= link_to "Delete #{item.name}", item_path(item), method: :delete %>
+  <% @incomplete_items.each do |item| %>
+
+  <div class="card">
+    <p>
+      <a class="" data-toggle="collapse" href="#collapse<%= item.id %>" aria-expanded="false" aria-controls="collapseExample">
+        <h3><%= item.name + '    '%> <input type="checkbox" class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>" <%= item.completed ? "checked" : "unchecked" %> ></h3>
+      </a>
+    </p>
+    <div class="collapse" id="collapse<%= item.id %>">
+      <div class="card card-block">
+        <%= item.description %>
+        <br>
+        You are <%= item.distance_from(@user_position).round(2) %> miles away from this item.
+        <br />
+        <%= link_to "Edit #{item.name}", edit_item_path(item) %>
+        <br>
+        <%= link_to "Delete #{item.name}", item_path(item), method: :delete %>
+      </div>
+    </div>
+  </div>
+
   <% end %>
 
   <% @completed_items.each do |item| %>
-    <h3>
-      <input type="checkbox" class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>" <%= item.completed ? "checked" : "unchecked" %> >
-      <%= link_to item.name, item_path(item) %>
-    </h3>
 
-    <%= item.description %>
-    <br>
-    You are <%= item.distance_from(@user_position).round(2) %> miles away from this item.
-    <br />
-    <%= link_to "Edit #{item.name}", edit_item_path(item) %>
-    <br>
-    <%= link_to "Delete #{item.name}", item_path(item), method: :delete %>
+  <div class="card">
+    <p>
+      <a class="" data-toggle="collapse" href="#collapse<%= item.id %>" aria-expanded="false" aria-controls="collapseExample">
+        <h3><%= item.name %> <input type="checkbox" class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>" <%= item.completed ? "checked" : "unchecked" %> ></h3>
+      </a>
+    </p>
+    <div class="collapse" id="collapse<%= item.id %>">
+      <div class="card card-block">
+        <%= item.description %>
+        <br>
+        You are <%= item.distance_from(@user_position).round(2) %> miles away from this item.
+        <br />
+        <%= link_to "Edit #{item.name}", edit_item_path(item) %>
+        <br>
+        <%= link_to "Delete #{item.name}", item_path(item), method: :delete %>
+      </div>
+    </div>
+  </div>
+
   <% end %>
 
 
