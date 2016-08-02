@@ -1,25 +1,23 @@
-<br />
-<br />
-
-<div id="show-item-description-container">
-  <div id='item-name'>
-    <h3><%= @item.name %></h3>
-  </div>
-  <div id='item-description'>
-    <%= @item.description %>
-  </div>
-  <div id='place-name'>
-    <%= @item.place_name %>
-  </div>
-  <div id='place-address'>
-    <%= @item.address %>
-  </div>
-</div>
-<div id='show-item-buttons'>
-  <p>
-    <%= link_to "Edit #{@item.name}", edit_item_path(@item) %>
-    <p>
-      <%= link_to "Delete #{@item.name}", item_path(@item), method: :delete %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id=item-card>
+      <div id="show-item-description-container">
+        <div id='item-name'> <%= @item.name %> </div>
+        <div id='item-description'> <%= @item.description %> </div>
+        <div id='place-name'> <%= @item.place_name %> </div>
+        <div id='place-address'> <%= @item.address %> </div>
+      </div>
+      <div id='show-item-buttons'>
+        <p> <%= link_to "Edit #{@item.name}", edit_item_path(@item) %>
+        <p> <%= link_to "Delete #{@item.name}", item_path(@item), method: :delete %>
+        <p> <%= link_to "Back to checklist", items_path  %>
+      </div>
     </div>
 
     <div id="show-map"></div>
