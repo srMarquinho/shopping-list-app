@@ -16,11 +16,11 @@ var placeLng;
 function initAutocomplete() {
   var map = new google.maps.Map(document.getElementById('search-map'), {
     center: {lat: 55.5, lng: 1},
-    zoom: 14,
+    zoom: 15,
     mapTypeId: 'roadmap'
   });
 
-    var youIcon = 'https://s31.postimg.org/6gsyhqdzf/you_icon2.png'
+    var youIcon = 'https://s31.postimg.org/m9bv4fq7f/you_icon.png'
     var myMarker = new google.maps.Marker({
       map: map,
       icon: youIcon,
@@ -74,11 +74,12 @@ function initAutocomplete() {
       }
 
       var icon = {
-        url: place.icon,
-        size: new google.maps.Size(71, 71),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(25, 25)
+        url: 'https://s32.postimg.org/loajgnlg5/item_icon.png',
+        // url: place.icon,
+        // size: new google.maps.Size(71, 71),
+        // origin: new google.maps.Point(0, 0),
+        // anchor: new google.maps.Point(17, 34),
+        // scaledSize: new google.maps.Size(25, 25)
       };
 
       // Create a marker for each place.
