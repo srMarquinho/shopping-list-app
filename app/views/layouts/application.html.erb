@@ -34,7 +34,7 @@
       <br />
       <br />
       <br />
-      <a href="<%= new_item_path %>"> <i class="fa fa-plus-circle fa-4x"></i></a>
+      <a href="<%= new_item_path %>" id="add_item"> <i class="fa fa-plus-circle fa-4x"></i></a>
 
       <% if notice %>
         <div class="alert alert-warning alert-dismissible fade in" role="notice">
@@ -44,7 +44,7 @@
           <%= notice %>
         </div>
       <% end %>
-      
+
       <% if alert %>
         <div class="alert alert-danger alert-dismissible fade in" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
