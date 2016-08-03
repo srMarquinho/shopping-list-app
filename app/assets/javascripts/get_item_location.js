@@ -20,7 +20,7 @@ function getItemLocation(){
             at: new Date(new Date().getTime() + 1 * 1000)
           });
         }
-        
+
         itemCounter = json.length;
       }
     }
