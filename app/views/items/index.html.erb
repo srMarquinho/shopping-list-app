@@ -13,13 +13,11 @@
       <input type="checkbox" class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>" <%= item.completed ? "checked" : "unchecked" %> >
     </p>
     <div class="collapse" id="collapse<%= item.id %>">
-      <div class="card card-block">
         <h5><%= item.description %></h5>
         <br>
         You are <%= item.distance_from(@user_position).round(2) %> miles away from this item.
         <br />
         <%= link_to "Edit", edit_item_path(item), id: :"edit_#{item.name}" %> | <%= link_to "Delete", item_path(item), method: :delete, id: :"delete_#{item.name}" %> | <%= link_to "Map", item_path(item), id: :"map_#{item.name}" %>
-      </div>
     </div>
   </div>
 
@@ -35,13 +33,11 @@
       <input type="checkbox" class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>" <%= item.completed ? "checked" : "unchecked" %> >
     </p>
     <div class="collapse" id="collapse<%= item.id %>">
-      <div class="card card-block">
         <h5><%= item.description %></h5>
         <br>
         You are <%= item.distance_from(@user_position).round(2) %> miles away from this item.
         <br />
         <%= link_to "Edit", edit_item_path(item), id: :"edit_#{item.name}" %> | <%= link_to "Delete", item_path(item), method: :delete, id: :"delete_#{item.name}" %> | <%= link_to "Map", item_path(item), id: :"map_#{item.name}" %>
-      </div>
     </div>
   </div>
 
