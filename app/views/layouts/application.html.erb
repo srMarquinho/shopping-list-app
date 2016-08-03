@@ -29,27 +29,9 @@
           </div>
         </nav>
       <% end %>
+
       <br />
       <br />
-      <br />
-      <br />
-
-<script>
-  document.addEventListener("deviceready", onDeviceReady, false);
-
-  function onDeviceReady() {
-
-    cordova.plugins.notification.local.trigger({
-      id: 1,
-      title: 'Ping!',
-      text: 'Got and pick tha shit up',
-      every: 'second',
-      autoClear: false,
-    });
-
-    // Now safe to use device APIs
-  }
-</script>
 
       <% if notice %>
         <div class="alert alert-warning alert-dismissible fade in" role="notice">
