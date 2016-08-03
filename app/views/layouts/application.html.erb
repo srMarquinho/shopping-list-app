@@ -34,22 +34,17 @@
       <br />
       <br />
 
-      <br />
-      <br />
-
 <script>
   document.addEventListener("deviceready", onDeviceReady, false);
 
   function onDeviceReady() {
 
-    cordova.plugins.notification.local.schedule({
+    cordova.plugins.notification.local.trigger({
       id: 1,
-      title: 'You have got a close item.',
+      title: 'Ping!',
       text: 'Got and pick tha shit up',
-      sound: null,
-      every: 'minute',
+      every: 'second',
       autoClear: false,
-      at: new Date(new Date().getTime() + 10 * 1000)
     });
 
     // Now safe to use device APIs
