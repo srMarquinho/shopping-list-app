@@ -1,10 +1,11 @@
+<div class="container-full">
+
 <% if @completed_items.empty? && @incomplete_items.empty? %>
   No items yet
 <% else %>
 
 
   <% @incomplete_items.each do |item| %>
-
   <div class="card">
     <p>
       <a class="" data-toggle="collapse" href="#collapse<%= item.id %>" aria-expanded="false" aria-controls="collapseExample">
@@ -20,7 +21,6 @@
         <%= link_to "Edit", edit_item_path(item), id: :"edit_#{item.name}" %> | <%= link_to "Delete", item_path(item), method: :delete, id: :"delete_#{item.name}" %> | <%= link_to "Map", item_path(item), id: :"map_#{item.name}" %>
     </div>
   </div>
-
   <% end %>
 
   <% @completed_items.each do |item| %>
@@ -40,8 +40,6 @@
         <%= link_to "Edit", edit_item_path(item), id: :"edit_#{item.name}" %> | <%= link_to "Delete", item_path(item), method: :delete, id: :"delete_#{item.name}" %> | <%= link_to "Map", item_path(item), id: :"map_#{item.name}" %>
     </div>
   </div>
-
   <% end %>
-
-
 <% end %>
+</div>
