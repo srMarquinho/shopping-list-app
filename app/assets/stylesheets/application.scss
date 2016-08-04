@@ -19,14 +19,16 @@
 html,body {
   height:100%;
   color: #4d4d4d;
-  background-color: #cccccc
+  // background-color: #cccccc
+  // background-image: url("soho_lines.jpg");
 }
 
 #application-body {
   background-repeat: no-repeat;
   background-attachment: fixed;
-  // background-position: center;
-  background-position: -250px 0px;
+  background-position: top center;
+  // background-position: -250px 0px;
+  background-image: url('map_opaque.png');
 }
 
 h5 {
@@ -38,12 +40,14 @@ h5 {
 .container-full {
   margin: 0 auto;
   width: 90%;
-  overflow:hidden;
+  height: 100px;
 }
 
 .fa-plus-circle {
-  margin-top: 30px;
-  margin-right: 20px;
+  margin-top: 5px;
+  margin-right: 15px;
+  float: right;
+  position: relative;
 }
 
 #sign-out-link {
@@ -54,7 +58,11 @@ h5 {
 .form-control{
   margin-left: 15px;
   margin-right:15px;
-  width: 93%;
+  width: 92%;
+}
+
+.form-group {
+  margin-bottom: 7px;
 }
 
 #pac-input {
@@ -93,4 +101,14 @@ h5 {
 #direction-button {
   position: absolute;
   bottom: 50%;
+}
+
+.item-form {
+  margin-bottom: 3px;
+  padding: 0px;
+}
+
+#item-description, #item-name {
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
