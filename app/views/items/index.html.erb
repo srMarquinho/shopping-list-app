@@ -1,51 +1,46 @@
+<div class="container-full">
+
 <% if @completed_items.empty? && @incomplete_items.empty? %>
   No items yet
 <% else %>
 
 
   <% @incomplete_items.each do |item| %>
-
-  <div class="card">
+  <div class="card card-incomplete" id='card-incomplete<%= item.id %>'>
     <p>
       <a class="" data-toggle="collapse" href="#collapse<%= item.id %>" aria-expanded="false" aria-controls="collapseExample">
-        <h3 style="display: inline"><%= item.name %></h3>
+        <h5 style="display: inline"><%= item.name %></h5>
       </a>
-      <input type="checkbox" class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>" <%= item.completed ? "checked" : "unchecked" %> >
+      <i class="fa fa-shopping-cart fa-lg" id="<%= item.id %>" aria-hidden="true"></i>
     </p>
     <div class="collapse" id="collapse<%= item.id %>">
-      <div class="card card-block">
-        <h5><%= item.description %></h5>
+        <h6><%= item.description %></h6>
         <br>
         You are <%= item.distance_from(@user_position).round(2) %> miles away from this item.
         <br />
         <%= link_to "Edit", edit_item_path(item), id: :"edit_#{item.name}" %> | <%= link_to "Delete", item_path(item), method: :delete, id: :"delete_#{item.name}" %> | <%= link_to "Map", item_path(item), id: :"map_#{item.name}" %>
-      </div>
     </div>
   </div>
-
   <% end %>
+
 
   <% @completed_items.each do |item| %>
-
-  <div class="card">
+  <div class="card card-complete" id='card-complete<%= item.id %>'>
     <p>
       <a class="" data-toggle="collapse" href="#collapse<%= item.id %>" aria-expanded="false" aria-controls="collapseExample">
-        <h3 style="display: inline"><%= item.name %></h3>
+        <h5 style="display: inline"><%= item.name %></h5>
       </a>
-      <input type="checkbox" class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>" <%= item.completed ? "checked" : "unchecked" %> >
+      <i class="fa fa-check-square-o fa-lg" id="<%= item.id %>" aria-hidden="true"></i>
+      <!-- <button class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>"></button> -->
     </p>
     <div class="collapse" id="collapse<%= item.id %>">
-      <div class="card card-block">
-        <h5><%= item.description %></h5>
+        <h6><%= item.description %></h6>
         <br>
         You are <%= item.distance_from(@user_position).round(2) %> miles away from this item.
         <br />
         <%= link_to "Edit", edit_item_path(item), id: :"edit_#{item.name}" %> | <%= link_to "Delete", item_path(item), method: :delete, id: :"delete_#{item.name}" %> | <%= link_to "Map", item_path(item), id: :"map_#{item.name}" %>
-      </div>
     </div>
   </div>
-
   <% end %>
-
-
 <% end %>
+</div>

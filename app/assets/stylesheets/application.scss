@@ -25,3 +25,49 @@
 #pac-input {
   width: 200px;
 }
+
+html,body {
+  height:100%;
+  color: #404040;
+}
+
+/* Custom container */
+.container-full {
+  margin: 0 auto;
+  width: 90%;
+  overflow:hidden;
+}
+
+.fa-shopping-cart, .fa-check-square-o {
+  margin: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+  float:left;
+  // vertical-align: bottom;
+}
+
+.card-complete {
+  padding: 0px;
+  margin-bottom: 0.25rem;
+  background-color: #ebfaeb
+}
+
+.card-incomplete {
+  padding: 0px;
+  margin-bottom: 0.25rem;
+  background-color: #ffe6e6
+}
+
+h5 {
+  line-height: 0;
+  font-weight: 300;
+  // vertical-align: text-top;
+}
+
+#application-body {
+  background-image: url('Street.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  // background-position: center;
+  background-position: -250px 0px;
+}

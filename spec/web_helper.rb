@@ -18,7 +18,7 @@ def signin
 end
 
 def add_item(name: 'Shampoo')
-  click_link 'Add an item'
+  click_link 'add_item'
   fill_in 'Name', with: name
   click_button 'Create Item'
 end

@@ -5,7 +5,7 @@ feature 'Items' do
     scenario 'should display a prompt to add an item' do
       signup
       expect(page).to have_content 'No items yet'
-      expect(page).to have_link 'Add an item'
+      expect(page).to have_link 'add_item'
     end
   end
 
@@ -36,7 +36,7 @@ feature 'Items' do
 
     # scenario 'has a location when added by google maps' do
     #   signup
-    #   click_link 'Add an item'
+    #   click_link 'add_item'
     #   fill_in 'Name', with: 'Shampoo'
     #   fill_in 'pac-input', with: '50 Commer, London, United Kingdom'
     #   click_button 'Create Item'

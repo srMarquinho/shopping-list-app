@@ -5,22 +5,24 @@
     <%= javascript_include_tag "https://www.atlasestateagents.co.uk/javascript/tether.min.js" %>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    "http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body id='application-body'>
       <% if user_signed_in? %>
-        <nav class="navbar navbar-light bg-faded navbar-fixed-top">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation">
-            &#9776;
-          </button>
-          <div class="collapse" id="exCollapsingNavbar">
+      <div class="container-full">
+      <nav class="navbar navbar-light bg-faded navbar-fixed-top text-xs-right">
+        <p></p>
+          <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">&#9776;</button>
+          <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
               <ul class="nav navbar-nav">
+                <p></p>
                 <li class="nav-item">
-                  <%= link_to "Checklist", items_path, class: "nav-link"  %>
+                  <%= link_to "See list", items_path, class: "nav-link"  %>
                 </li>
                 <li class="nav-item">
-                  <%= link_to "Add an item", new_item_path, class: "nav-link" %>
+                  <a href="#" class="nav-link">About us</a>
                 </li>
                 <li class="nav-item">
                   <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link" %>
@@ -28,10 +30,18 @@
               </ul>
           </div>
         </nav>
+        <br />
+        <br />
+        <br />
+
+
+        <span><img src="/logo.png" style="width:150px;height:70px;"></span>
+        <span class="text-xs-right" style="float:right;">
+          <a href="<%= new_item_path %>" id="add_item"> <i class="fa fa-plus-circle fa-4x"></i></a>
+        </span>
+        <p>
       <% end %>
 
-      <br />
-      <br />
 
       <% if notice %>
         <div class="alert alert-warning alert-dismissible fade in" role="notice">
@@ -41,19 +51,23 @@
           <%= notice %>
         </div>
       <% end %>
-      <% if alert %>
-        <div class="alert alert-danger alert-dismissible fade in" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <%= alert %>
-        </div>
-      <% end %>
 
+
+      <% if user_signed_in? %>
+        <% if alert %>
+          <div class="alert alert-danger alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <%= alert %>
+          </div>
+        <% end %>
+      <% end %>
       <br />
+    </div>
+
 
       <%= yield %>
 
-    </div>
   </body>
 </html>
