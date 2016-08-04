@@ -21,17 +21,6 @@
         </span>
       <% end %>
 
-
-      <% if notice %>
-        <div class="alert alert-warning alert-dismissible fade in" role="notice">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <%= notice %>
-        </div>
-      <% end %>
-
-
       <% if user_signed_in? %>
         <% if alert %>
           <div class="alert alert-danger alert-dismissible fade in" role="alert">
