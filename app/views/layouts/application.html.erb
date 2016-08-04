@@ -12,46 +12,14 @@
   <body id='application-body'>
       <% if user_signed_in? %>
       <div class="container-full">
-      <nav class="navbar navbar-light bg-faded navbar-fixed-top text-xs-right">
-        <p></p>
-          <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">&#9776;</button>
-          <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-              <ul class="nav navbar-nav">
-                <p></p>
-                <li class="nav-item">
-                  <%= link_to "See list", items_path, class: "nav-link"  %>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">About us</a>
-                </li>
-                <li class="nav-item">
-                  <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-                </li>
-              </ul>
-          </div>
-        </nav>
         <br />
-        <br />
-        <br />
+        <p />
 
-
-        <span><img src="/logo.png" style="width:150px;height:70px;"></span>
+        <span><a href="/"><img src="/logomakr__4_.png" style="width:35%;height:30%; margin-left:15px;"></a></span>
         <span class="text-xs-right" style="float:right;">
           <a href="<%= new_item_path %>" id="add_item"> <i class="fa fa-plus-circle fa-4x"></i></a>
         </span>
-        <p>
       <% end %>
-
-
-      <% if notice %>
-        <div class="alert alert-warning alert-dismissible fade in" role="notice">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <%= notice %>
-        </div>
-      <% end %>
-
 
       <% if user_signed_in? %>
         <% if alert %>

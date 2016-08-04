@@ -51,8 +51,10 @@ feature 'Items' do
      signup
      add_item
      click_link 'Shampoo'
+     click_link 'Map'
      expect(page).to have_content 'Shampoo'
-     expect(current_path).to eq "/items"
+     expect(page).to have_content 'Show Directions'
+    #  expect(current_path).to eq "/items"
     end
   end
 
@@ -88,7 +90,6 @@ feature 'Items' do
       add_item
       click_link 'Delete'
       expect(page).not_to have_content 'Shampoo'
-      expect(page).to have_content 'Item deleted successfully'
     end
 
     scenario 'do not let not owner user delete a restaurant' do

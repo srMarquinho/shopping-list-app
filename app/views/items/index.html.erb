@@ -1,4 +1,5 @@
 <div class="container-full">
+<p>
 
 <% if @completed_items.empty? && @incomplete_items.empty? %>
   No items yet
@@ -15,10 +16,12 @@
     </p>
     <div class="collapse" id="collapse<%= item.id %>">
         <h6><%= item.description %></h6>
-        <br>
+        <p>
         You are <%= item.distance_from(@user_position).round(2) %> miles away from this item.
         <br />
-        <%= link_to "Edit", edit_item_path(item), id: :"edit_#{item.name}" %> | <%= link_to "Delete", item_path(item), method: :delete, id: :"delete_#{item.name}" %> | <%= link_to "Map", item_path(item), id: :"map_#{item.name}" %>
+        <p>
+        <span class="item-links"><%= link_to "Map", item_path(item), id: :"map_#{item.name}" %> | <%= link_to "Edit", edit_item_path(item), id: :"edit_#{item.name}" %> | <%= link_to "Delete", item_path(item), method: :delete, id: :"delete_#{item.name}" %></span>
+        <br />
     </div>
   </div>
   <% end %>
@@ -30,17 +33,19 @@
       <a class="" data-toggle="collapse" href="#collapse<%= item.id %>" aria-expanded="false" aria-controls="collapseExample">
         <h5 style="display: inline"><%= item.name %></h5>
       </a>
-      <i class="fa fa-check-square-o fa-lg" id="<%= item.id %>" aria-hidden="true"></i>
-      <!-- <button class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>"></button> -->
+      <i class="fa fa-shopping-cart fa-lg" id="<%= item.id %>" aria-hidden="true"></i>
     </p>
     <div class="collapse" id="collapse<%= item.id %>">
         <h6><%= item.description %></h6>
-        <br>
+        <p>
         You are <%= item.distance_from(@user_position).round(2) %> miles away from this item.
         <br />
-        <%= link_to "Edit", edit_item_path(item), id: :"edit_#{item.name}" %> | <%= link_to "Delete", item_path(item), method: :delete, id: :"delete_#{item.name}" %> | <%= link_to "Map", item_path(item), id: :"map_#{item.name}" %>
+        <p>
+        <span class="item-links"><%= link_to "Edit", edit_item_path(item), id: :"edit_#{item.name}" %> | <%= link_to "Delete", item_path(item), method: :delete, id: :"delete_#{item.name}" %> | <%= link_to "Map", item_path(item), id: :"map_#{item.name}" %></span>
+        <br />
     </div>
   </div>
   <% end %>
 <% end %>
+<%= link_to "Sign out", destroy_user_session_path, id: :"sign-out-link", method: :delete %>
 </div>
