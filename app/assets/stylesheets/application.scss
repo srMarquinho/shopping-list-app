@@ -36,10 +36,16 @@ html,body {
   // vertical-align: bottom;
 }
 
-#card {
+.card-complete {
   padding: 0px;
   margin-bottom: 0.25rem;
-  height: 50px;
+  background-color: #ebfaeb
+}
+
+.card-incomplete {
+  padding: 0px;
+  margin-bottom: 0.25rem;
+  background-color: #ffe6e6
 }
 
 h5 {

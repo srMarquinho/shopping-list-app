@@ -48,7 +48,7 @@ class ItemsController < ApplicationController
 
   def toggle
     @item = Item.find(params[:id])
-    @item.completed == false ? @item.update(completed: true) : @item.update(completed: false)
+    @item.completed ? @item.update(completed: false) : @item.update(completed: true)
   end
 
   def get_user_location

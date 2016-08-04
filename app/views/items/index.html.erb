@@ -6,13 +6,12 @@
 
 
   <% @incomplete_items.each do |item| %>
-  <div class="card" id='card'>
+  <div class="card card-incomplete" id='card-incomplete<%= item.id %>'>
     <p>
       <a class="" data-toggle="collapse" href="#collapse<%= item.id %>" aria-expanded="false" aria-controls="collapseExample">
         <h5 style="display: inline"><%= item.name %></h5>
       </a>
       <i class="fa fa-shopping-cart fa-lg" id="<%= item.id %>" aria-hidden="true"></i>
-      <!-- <button class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>"></button> -->
     </p>
     <div class="collapse" id="collapse<%= item.id %>">
         <h6><%= item.description %></h6>
@@ -24,9 +23,9 @@
   </div>
   <% end %>
 
-  <% @completed_items.each do |item| %>
 
-  <div class="card" id='card'>
+  <% @completed_items.each do |item| %>
+  <div class="card card-complete" id='card-complete<%= item.id %>'>
     <p>
       <a class="" data-toggle="collapse" href="#collapse<%= item.id %>" aria-expanded="false" aria-controls="collapseExample">
         <h5 style="display: inline"><%= item.name %></h5>
