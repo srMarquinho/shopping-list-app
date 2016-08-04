@@ -53,3 +53,11 @@ h5 {
   font-weight: 300;
   // vertical-align: text-top;
 }
+
+#application-body {
+  background-image: url('Street.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  // background-position: center;
+  background-position: -250px 0px;
+}
