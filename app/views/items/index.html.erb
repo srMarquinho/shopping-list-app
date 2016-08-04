@@ -28,7 +28,7 @@
 
 
   <% @completed_items.each do |item| %>
-  <div class="card card-incomplete" id='card-incomplete<%= item.id %>'>
+  <div class="card card-complete" id='card-complete<%= item.id %>'>
     <p>
       <a class="" data-toggle="collapse" href="#collapse<%= item.id %>" aria-expanded="false" aria-controls="collapseExample">
         <h5 style="display: inline"><%= item.name %></h5>

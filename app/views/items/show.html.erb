@@ -2,8 +2,11 @@
    <div class="form-control">
   <div id=item-card>
     <div id="show-item-description-container">
-    <b>  <div id='item-name'> <%= @item.name %> </div> </b>
-      <div id='item-description'> <%= @item.description %> </div>
+    <b>
+      <br />
+      <div id='item-name'> <h5><strong><%= @item.name %></strong></h5> </div> </b>
+      <br />
+      <div id='item-description'> <h6><%= @item.description %></h6> </div>
       <div id='place-name'> <%= @item.place_name %> </div>
       <div id='place-address'> <%= @item.address %> </div>
     </div>
@@ -13,7 +16,7 @@
 </div>
 
 <br>
-  <div id="direction-button" style="width: 150px; margin-left: 15px;"type="button" value="directions">Show Directions</div>
+<button id="direction-button" type="button" value="directions" class='btn btn-primary'>Show Directions</button>
   <div id="no-direction-map"></div>
   <div id="show-map"></div>
 
