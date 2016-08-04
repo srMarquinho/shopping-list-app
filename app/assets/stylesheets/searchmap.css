@@ -4,7 +4,10 @@ html, body {
   padding: 0;
 }
 #search-map {
-  height: 70%;
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
 }
 .controls {
   margin-top: 10px;
@@ -32,21 +35,21 @@ html, body {
   border-color: #4d90fe;
 }
 
-.pac-container {
+/*.pac-container {
   font-family: Roboto;
-}
+}*/
 
-#type-selector {
+/*#type-selector {
   color: #fff;
   background-color: #4d90fe;
   padding: 5px 11px 0px 11px;
-}
+}*/
 
-#type-selector label {
+/*#type-selector label {
   font-family: Roboto;
   font-size: 13px;
   font-weight: 300;
 }
 #target {
   width: 345px;
-}
+}*/
