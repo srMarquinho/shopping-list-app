@@ -37,13 +37,20 @@ html,body {
 }
 
 #card {
-  padding: 0px;
   margin-bottom: 0.25rem;
-  height: 50px;
+  // height: 50px;
 }
 
 h5 {
   line-height: 0;
   font-weight: 300;
   // vertical-align: text-top;
+}
+
+#application-body {
+  background-image: url('Street.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  // background-position: center;
+  background-position: -250px 0px;
 }
