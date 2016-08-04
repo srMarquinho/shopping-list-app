@@ -2,8 +2,8 @@ function initMap() {
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function (position) {
-      var myLat = position.coords.latitude
-      var myLng = position.coords.longitude
+      var myLat = position.coords.latitude;
+      var myLng = position.coords.longitude;
       var myLocation = new google.maps.LatLng(myLat, myLng);
       var directionsDisplay = new google.maps.DirectionsRenderer(document.getElementById('direction-display'));
       var directionsService = new google.maps.DirectionsService(document.getElementById('direction-service'));

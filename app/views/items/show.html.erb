@@ -8,12 +8,6 @@
     </div>
   </div>
 </div>
-
-  <div id='show-item-buttons'>
-    <p> <%= link_to "Edit #{@item.name}", edit_item_path(@item) %>
-    <p> <%= link_to "Delete #{@item.name}", item_path(@item), method: :delete %>
-    <p> <%= link_to "Back to checklist", items_path  %>
-  </div>
 </div>
   <div id="direction-button" type="button" value="directions">Show Directions</div>
   <div id="no-direction-map"></div>
@@ -21,10 +15,9 @@
 
 
 <script>
-  var button = document.getElementById('direction-button');
   var itemLatitude = <%= @item.latitude %>;
   var itemLongitude = <%= @item.longitude %>;
-  initMap()
+  initMap();
 
 </script>
 
