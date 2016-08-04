@@ -6,15 +6,16 @@
 
 
   <% @incomplete_items.each do |item| %>
-  <div class="card">
+  <div class="card" id='card'>
     <p>
       <a class="" data-toggle="collapse" href="#collapse<%= item.id %>" aria-expanded="false" aria-controls="collapseExample">
-        <h3 style="display: inline"><%= item.name %></h3>
+        <h5 style="display: inline"><%= item.name %></h5>
       </a>
-      <button class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>"></button>
+      <i class="fa fa-shopping-cart fa-lg" id="<%= item.id %>" aria-hidden="true"></i>
+      <!-- <button class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>"></button> -->
     </p>
     <div class="collapse" id="collapse<%= item.id %>">
-        <h5><%= item.description %></h5>
+        <h6><%= item.description %></h6>
         <br>
         You are <%= item.distance_from(@user_position).round(2) %> miles away from this item.
         <br />
@@ -25,15 +26,16 @@
 
   <% @completed_items.each do |item| %>
 
-  <div class="card">
+  <div class="card" id='card'>
     <p>
       <a class="" data-toggle="collapse" href="#collapse<%= item.id %>" aria-expanded="false" aria-controls="collapseExample">
-        <h3 style="display: inline"><%= item.name %></h3>
+        <h5 style="display: inline"><%= item.name %></h5>
       </a>
-      <button class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>"></button>
+      <i class="fa fa-check-square-o fa-lg" id="<%= item.id %>" aria-hidden="true"></i>
+      <!-- <button class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>"></button> -->
     </p>
     <div class="collapse" id="collapse<%= item.id %>">
-        <h5><%= item.description %></h5>
+        <h6><%= item.description %></h6>
         <br>
         You are <%= item.distance_from(@user_position).round(2) %> miles away from this item.
         <br />

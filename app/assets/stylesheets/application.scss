@@ -27,3 +27,23 @@ html,body {
   width: 90%;
   overflow:hidden;
 }
+
+.fa-shopping-cart, .fa-check-square-o {
+  margin: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+  float:left;
+  // vertical-align: bottom;
+}
+
+#card {
+  padding: 0px;
+  margin-bottom: 0.25rem;
+  height: 50px;
+}
+
+h5 {
+  line-height: 0;
+  font-weight: 300;
+  // vertical-align: text-top;
+}
