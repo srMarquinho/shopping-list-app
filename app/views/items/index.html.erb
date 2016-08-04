@@ -47,5 +47,5 @@
   </div>
   <% end %>
 <% end %>
-<%= link_to "Sign out", destroy_user_session_path, id: :"sign-out-link" %>
+<%= link_to "Sign out", destroy_user_session_path, id: :"sign-out-link", method: :delete %>
 </div>
