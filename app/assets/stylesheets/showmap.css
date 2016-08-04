@@ -1,13 +1,16 @@
 
-#no-direction-map{
-  opacity: 100;
-  height: 50%;
-  width: 100%;
-}
-
-
 #show-map {
   opacity: 0;
   height: 50%;
   width: 100%;
+  position: absolute;
+  bottom: 0px;
+}
+
+#no-direction-map{
+  opacity: 100;
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
 }
