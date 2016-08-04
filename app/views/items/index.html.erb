@@ -11,7 +11,7 @@
       <a class="" data-toggle="collapse" href="#collapse<%= item.id %>" aria-expanded="false" aria-controls="collapseExample">
         <h3 style="display: inline"><%= item.name %></h3>
       </a>
-      <input type="checkbox" class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>" <%= item.completed ? "checked" : "unchecked" %> >
+      <button class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>"></button>
     </p>
     <div class="collapse" id="collapse<%= item.id %>">
         <h5><%= item.description %></h5>
@@ -30,7 +30,7 @@
       <a class="" data-toggle="collapse" href="#collapse<%= item.id %>" aria-expanded="false" aria-controls="collapseExample">
         <h3 style="display: inline"><%= item.name %></h3>
       </a>
-      <input type="checkbox" class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>" <%= item.completed ? "checked" : "unchecked" %> >
+      <button class="item-check" name="<%= item.name %>" value="<%= item.name %>" id="<%= item.id %>"></button>
     </p>
     <div class="collapse" id="collapse<%= item.id %>">
         <h5><%= item.description %></h5>
