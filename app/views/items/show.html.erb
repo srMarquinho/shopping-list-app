@@ -9,45 +9,23 @@
   </div>
 </div>
 
+  <div id='show-item-buttons'>
+    <p> <%= link_to "Edit #{@item.name}", edit_item_path(@item) %>
+    <p> <%= link_to "Delete #{@item.name}", item_path(@item), method: :delete %>
+    <p> <%= link_to "Back to checklist", items_path  %>
+  </div>
+</div>
+  <div id="direction-button" type="button" value="directions">Show Directions</div>
+  <div id="no-direction-map"></div>
+  <div id="show-map"></div>
 
-<div id="show-map"></div>
+
 <script>
-  var itemLat = <%= @item.latitude %>;
-  var itemLng = <%= @item.longitude %>;
+  var button = document.getElementById('direction-button');
+  var itemLatitude = <%= @item.latitude %>;
+  var itemLongitude = <%= @item.longitude %>;
+  initMap()
 
-  var map;
-  function initMap() {
-    map = new google.maps.Map(document.getElementById('show-map'), {
-      center: {
-        lat: itemLat,
-        lng: itemLng
-      },
-      zoom: 15
-    });
-
-    var youIcon = 'https://s31.postimg.org/m9bv4fq7f/you_icon.png';
-    var itemIcon = 'https://s32.postimg.org/loajgnlg5/item_icon.png';
-    var myMarker = new google.maps.Marker({
-      map: map,
-      icon: youIcon,
-    });
-
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-            myLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-            myMarker.setPosition(myLocation);
-        });
-    }
-
-
-    var itemMarker = new google.maps.Marker({
-      position: {
-        lat: itemLat,
-        lng: itemLng
-      },
-      map: map,
-      icon: itemIcon
-    });
-  }
 </script>
+
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUu8pN7l0vL1M1VSN0SApzCoL8OYYFoLw&callback=initMap" async defer></script>
