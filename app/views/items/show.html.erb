@@ -1,7 +1,6 @@
 
 <br />
 <br />
-
 <div id=item-card>
   <div id="show-item-description-container">
     <div id='item-name'> <%= @item.name %> </div>
@@ -16,117 +15,16 @@
     <p> <%= link_to "Back to checklist", items_path  %>
   </div>
 </div>
-
-<div type="button" value="directions" id="direction-button">Show Directions</div>
-
-
-<div id="no-direction-map"></div>
-<div id="show-map"></div>
-<!-- <div id="panel"></div> -->
-
-<script>
-
-var button = document.getElementById('direction-button'); // Assumes element with id='button'
-
-button.onclick = function() {
-  var mapND = document.getElementById('no-direction-map');
-  var mapD = document.getElementById('show-map');
-  // var panel = document.getElementById('panel');
-
-  if (mapND.style.display !== 'none' || mapD.style.opacity == 0)
-  {
-      mapD.style.opacity = 100
-      // panel.style.opacity = 100
-      mapND.style.display = 'none';
-  }
-  else {
-      mapD.style.opacity = 0;
-      // panel.style.opacity = 0;
-      mapND.style.display = 'block';
-      ;
-  }
-};
-
-</script>
+  <div id="direction-button" type="button" value="directions">Show Directions</div>
+  <div id="no-direction-map"></div>
+  <div id="show-map"></div>
 
 
 <script>
-  var itemLat = <%= @item.latitude %>;
-  var itemLng = <%= @item.longitude %>;
-
-  function initMap() {
-    if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      var myLat = position.coords.latitude
-      var myLng = position.coords.longitude
-      var myLocation = new google.maps.LatLng(myLat, myLng);
-      var directionsDisplay = new google.maps.DirectionsRenderer(document.getElementById('direction-display'));
-      var directionsService = new google.maps.DirectionsService(document.getElementById('direction-service'));
-      var map = new google.maps.Map(document.getElementById('show-map'), {
-          center: {
-            lat: itemLat,
-            lng: itemLng
-          },
-          zoom: 15,
-        });
-
-        var map2 = new google.maps.Map(document.getElementById('no-direction-map'), {
-            center: {
-              lat: itemLat,
-              lng: itemLng
-            },
-            zoom: 15,
-          });
-
-         directionsDisplay.setMap(map);
-
-          var youIcon = 'https://s31.postimg.org/m9bv4fq7f/you_icon.png'
-          var itemIcon = 'https://s32.postimg.org/loajgnlg5/item_icon.png'
-          var myMarker = new google.maps.Marker({
-            map: map,
-            icon: youIcon,
-          });
-
-          var myMarker2 = new google.maps.Marker({
-            map: map2,
-            icon: youIcon,
-          });
-
-
-          myMarker.setPosition(myLocation);
-          myMarker2.setPosition(myLocation);
-
-          var itemMarker = new google.maps.Marker({
-            position: { lat: itemLat, lng: itemLng },
-            map: map,
-            icon: itemIcon
-          });
-
-          var itemMarker2 = new google.maps.Marker({
-            position: { lat: itemLat, lng: itemLng },
-            map: map2,
-            icon: itemIcon
-          });
-
-
-
-          directionsDisplay.setPanel(document.getElementById('panel'));
-          var request = {
-            origin: myLocation,
-            destination: {lat: itemLat, lng: itemLng},
-            travelMode: google.maps.DirectionsTravelMode.WALKING
-          };
-
-          directionsService.route(request, function (response, status){
-            if (status == google.maps.DirectionsStatus.OK) {
-              directionsDisplay.setDirections(response);
-            }
-          });
-        });
-       }
-     }
-
-
+  var button = document.getElementById('direction-button');
+  var itemLatitude = <%= @item.latitude %>;
+  var itemLongitude = <%= @item.longitude %>;
+  initMap()
 
 </script>
 
