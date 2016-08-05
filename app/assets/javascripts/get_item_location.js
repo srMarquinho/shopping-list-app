@@ -17,7 +17,7 @@ function getItemLocation(){
             text: alertString,
             every: 'minute',
             autoClear: false,
-            at: new Date(new Date().getTime() + 1 * 1000)
+            at: new Date(new Date().getTime() + 5 * 1000)
           });
         }
 
