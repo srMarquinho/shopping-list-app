@@ -5,7 +5,7 @@
     <%= javascript_include_tag "https://www.atlasestateagents.co.uk/javascript/tether.min.js" %>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag    "http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" %>
+    <%= stylesheet_link_tag    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -13,12 +13,11 @@
       <% if user_signed_in? %>
       <div class="container-full">
         <br />
-        <p />
 
-        <span><a href="/"><img src="/logomakr__4_.png" style="width:35%;height:30%; margin-left:15px;"></a></span>
-        <span class="text-xs-right" style="float:right;">
+        <span><a href="/"><img src="/logomakr__4_.png" style="width:35%;height:70%; margin-left:5px; float: left;"></a></span>
+        <!-- <span class="text-xs-right" style="float:right;"> -->
           <a href="<%= new_item_path %>" id="add_item"> <i class="fa fa-plus-circle fa-4x"></i></a>
-        </span>
+        <!-- </span> -->
       <% end %>
 
       <% if user_signed_in? %>
