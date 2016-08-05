@@ -15,7 +15,7 @@ function getItemLocation(){
           cordova.plugins.notification.local.schedule({
             id: 1,
             text: alertString,
-            // every: 'minute',
+            every: 'minute',
             autoClear: false,
             at: new Date(new Date().getTime() + 1 * 1000)
           });
