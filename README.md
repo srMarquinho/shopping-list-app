@@ -9,6 +9,7 @@
 - Configuration: Run `bundle install`
 - Database creation: Run `bin/rails db:create`
 - Test suite: Run `rspec`
+- Made to iOS
 
 User stories:
 
