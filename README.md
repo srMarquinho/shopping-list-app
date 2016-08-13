@@ -1,7 +1,11 @@
 [![Build Status](https://travis-ci.org/srMarquinho/shopping-list-app.svg?branch=master)](https://travis-ci.org/srMarquinho/shopping-list-app)
 [![Coverage Status](https://coveralls.io/repos/github/srMarquinho/shopping-list-app/badge.svg?branch=master)](https://coveralls.io/github/srMarquinho/shopping-list-app?branch=master)
 
-# Shopping List Reminder
+# ShopPing
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VPkfbeDOce8" frameborder="0" allowfullscreen></iframe>
+
+<img src="./docs/1.png" width="300"> <img src="./docs/2.png" width="300">
 
 - Ruby version: `2.3.0`
 - Rails version: `5.0.0`
