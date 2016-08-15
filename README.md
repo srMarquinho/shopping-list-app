@@ -2,6 +2,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/srMarquinho/shopping-list-app/badge.svg?branch=master)](https://coveralls.io/github/srMarquinho/shopping-list-app?branch=master)
 
 # ShopPing
+A shopping list app that reminds you to buy your item depending on your location.
 
 [![youtube](./docs/link.png)](https://www.youtube.com/watch?v=VPkfbeDOce8)
 
