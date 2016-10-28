@@ -43,7 +43,7 @@ class ItemsController < ApplicationController
   end
 
   def toggle
-    @item.completed ? @item.update(completed: false) : @item.update(completed: true)
+    @item.toggle!(:completed)
   end
 
   def get_user_location
