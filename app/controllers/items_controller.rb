@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
-  # before_filter :login_required, except: [:get_items]
-  before_action :authenticate_user!, except: [:get_items]
+  before_action :authenticate_user!
+  before_action :find_item, only: [:show, :edit, :update, :destroy, :toggle]
 
   def index
     @user_position = session[:user_position]
@@ -26,28 +26,23 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
-    @item = Item.find(params[:id])
     @item.update(item_params)
     redirect_to '/items'
   end
 
   def destroy
-    @item = Item.find(params[:id])
     @item.destroy
     flash[:notice] = 'Item deleted successfully'
     redirect_to '/items'
   end
 
   def toggle
-    @item = Item.find(params[:id])
     @item.completed ? @item.update(completed: false) : @item.update(completed: true)
   end
 
@@ -62,6 +57,12 @@ class ItemsController < ApplicationController
       close_items << item if (item_distance < 0.2 && !item.completed)
     end
     render json: close_items
+  end
+
+  private
+
+  def find_item
+    @item = Item.find(params[:id])
   end
 
   def item_params
