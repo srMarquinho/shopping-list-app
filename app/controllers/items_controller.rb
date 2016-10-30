@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
 
   def index
     @user_position = session[:user_position]
-    @items = current_user.items.all.order(:updated_at).reverse
+    @items = current_user.items
   end
 
   def new

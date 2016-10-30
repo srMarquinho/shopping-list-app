@@ -5,48 +5,44 @@
   No items yet
 <% else %>
 
-  <% @items.each do |item| %>
-    <% if item.completed %>
-      <div class="card card-incomplete" id='card-incomplete<%= item.id %>'>
-        <p>
-          <a class="" data-toggle="collapse" href="#collapse<%= item.id %>" aria-expanded="false" aria-controls="collapseExample">
-            <h5 style="display: inline"><%= item.name %></h5>
-          </a>
-          <i class="fa fa-shopping-cart fa-lg" id="<%= item.id %>" aria-hidden="true"></i>
-        </p>
-        <div class="collapse" id="collapse<%= item.id %>">
-            <h6><%= item.description %></h6>
-            <p>
-            You are <%= item.distance_from(@user_position).round(2) %> miles away from this item.
-            <br />
-            <p>
-            <span class="item-links"><%= link_to "Map", item_path(item), id: :"map_#{item.name}" %> | <%= link_to "Edit", edit_item_path(item), id: :"edit_#{item.name}" %> | <%= link_to "Delete", item_path(item), method: :delete, id: :"delete_#{item.name}" %></span>
-            <br />
-        </div>
+  <% @items.completed.by_updated_at.each do |item| %>
+    <div class="card card-incomplete" id='card-incomplete<%= item.id %>'>
+      <p>
+        <a class="" data-toggle="collapse" href="#collapse<%= item.id %>" aria-expanded="false" aria-controls="collapseExample">
+          <h5 style="display: inline"><%= item.name %></h5>
+        </a>
+        <i class="fa fa-shopping-cart fa-lg" id="<%= item.id %>" aria-hidden="true"></i>
+      </p>
+      <div class="collapse" id="collapse<%= item.id %>">
+          <h6><%= item.description %></h6>
+          <p>
+          You are <%= item.distance_from(@user_position).round(2) %> miles away from this item.
+          <br />
+          <p>
+          <span class="item-links"><%= link_to "Map", item_path(item), id: :"map_#{item.name}" %> | <%= link_to "Edit", edit_item_path(item), id: :"edit_#{item.name}" %> | <%= link_to "Delete", item_path(item), method: :delete, id: :"delete_#{item.name}" %></span>
+          <br />
       </div>
-    <% end %>
+    </div>
   <% end %>
 
-  <% @items.each do |item| %>
-    <% if !item.completed %>
-      <div class="card card-complete" id='card-complete<%= item.id %>'>
-        <p>
-          <a class="" data-toggle="collapse" href="#collapse<%= item.id %>" aria-expanded="false" aria-controls="collapseExample">
-            <h5 style="display: inline"><%= item.name %></h5>
-          </a>
-          <i class="fa fa-check-square-o fa-lg" id="<%= item.id %>" aria-hidden="true"></i>
-        </p>
-        <div class="collapse" id="collapse<%= item.id %>">
-            <h6><%= item.description %></h6>
-            <p>
-            You are <%= item.distance_from(@user_position).round(2) %> miles away from this item.
-            <br />
-            <p>
-            <span class="item-links"><%= link_to "Edit", edit_item_path(item), id: :"edit_#{item.name}" %> | <%= link_to "Delete", item_path(item), method: :delete, id: :"delete_#{item.name}" %> | <%= link_to "Map", item_path(item), id: :"map_#{item.name}" %></span>
-            <br />
-        </div>
+  <% @items.incompleted.by_updated_at.each do |item| %>
+    <div class="card card-complete" id='card-complete<%= item.id %>'>
+      <p>
+        <a class="" data-toggle="collapse" href="#collapse<%= item.id %>" aria-expanded="false" aria-controls="collapseExample">
+          <h5 style="display: inline"><%= item.name %></h5>
+        </a>
+        <i class="fa fa-check-square-o fa-lg" id="<%= item.id %>" aria-hidden="true"></i>
+      </p>
+      <div class="collapse" id="collapse<%= item.id %>">
+          <h6><%= item.description %></h6>
+          <p>
+          You are <%= item.distance_from(@user_position).round(2) %> miles away from this item.
+          <br />
+          <p>
+          <span class="item-links"><%= link_to "Edit", edit_item_path(item), id: :"edit_#{item.name}" %> | <%= link_to "Delete", item_path(item), method: :delete, id: :"delete_#{item.name}" %> | <%= link_to "Map", item_path(item), id: :"map_#{item.name}" %></span>
+          <br />
       </div>
-    <% end %>
+    </div>
   <% end %>
 <% end %>
 
