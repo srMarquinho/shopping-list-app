@@ -13,6 +13,7 @@
 !/log/.keep
 !/tmp/.keep
 /coverage/*
+Gemfile.lock
 
 # Ignore Byebug command history file.
 .byebug_history
