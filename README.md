@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/srMarquinho/shopping-list-app.svg?branch=master)](https://travis-ci.org/srMarquinho/shopping-list-app)
-[![Coverage Status](https://coveralls.io/repos/github/srMarquinho/shopping-list-app/badge.svg?branch=master)](https://coveralls.io/github/srMarquinho/shopping-list-app?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/srMarquinho/shopping-list-app/badge.svg?branch=coveralls)](https://coveralls.io/github/srMarquinho/shopping-list-app?branch=coveralls)
 
 # ShopPing
 A shopping list app that reminds you to buy your item depending on your location.
